@@ -1,36 +1,20 @@
 body {
   margin: 0px;
   padding: 0px;
-  font-family: sans-serif;
-}
-
-.my-flex-container div {
-  padding: 5px;
-  color: white;
-  width: 300px;
 }
 
 .my-flex-container {
+  border: 5px solid black;
   display: flex;
-  border: 6px solid black;
-  /* flex flow = flex-direction, flex-wrap*/
-  flex-flow: row wrap;
-
-  /*atajo de row-gap y column-gap para añadir un espacio
-  entre columna y fila*/
-  gap: 15px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
-/* nth-child() se pintan los primeros hijos segun el numero
-dado y si previamente se le añade un selector
-*/
-.my-flex-container div:nth-child(1) {
+.my-flex-container div {
+  box-sizing: border-box;
+  border: 1px solid black;
+  padding: 5px;
+  color: white;
   background-color: darkmagenta;
 }
-.my-flex-container div:nth-child(2) {
-  background-color: darkolivegreen;
-}
-.my-flex-container div:nth-child(3) {
-  background-color: darkred;
-}
-
