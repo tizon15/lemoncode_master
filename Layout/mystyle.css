@@ -23,4 +23,11 @@ body {
 }
 #box1 {
   padding-bottom: 70px;
+  order: 4;
+}
+#box2 {
+  align-self: flex-start;
+}
+#box4 {
+  order: -1;
 }
