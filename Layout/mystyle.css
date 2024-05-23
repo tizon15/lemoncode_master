@@ -7,5 +7,17 @@ body {
   display: flex;
   flex-direction: row;
   border: 3px solid black;
+  box-sizing: border-box;
+  height: 100vh;
+  justify-content: center;
+  align-items: baseline;
 }
 
+.box {
+  border: 1px solid black;
+  background-color: cadetblue;
+  padding: 30px;
+}
+#box1 {
+  padding-bottom: 70px;
+}
