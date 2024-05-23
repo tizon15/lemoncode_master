@@ -1,22 +1,29 @@
 body{
   margin: 0px;
   padding: 0px;
-}
-.my-flex-container {
- display: flex;
- width: 100vw;
- height: 100vh;
- flex-direction: row;
+  font-family: sans-serif;
 }
 
-.menu {  
-  width: 150px;
-  background-color: cadetblue;
-  border: 5px solid red
+.my-flex-container{
+  display: flex;
+  flex-direction: row;
+  border: 6px solid black;
 }
-.main {
-  background-color: bisque;
 
-  /*flex grow es para rellenar el restante*/
-  flex-grow: 1;
+/* nth-child() se pintan los primeros hijos segun el numero
+dado y si previamente se le añade un selector
+*/
+.my-flex-container div:nth-child(1){
+    background-color: darkmagenta;
+}
+.my-flex-container div:nth-child(2){
+  background-color: darkolivegreen;
+}
+.my-flex-container div:nth-child(3){
+  background-color: darkred;
+}
+
+.my-flex-container div{
+  padding: 5px;
+  color: white;
 }
