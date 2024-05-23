@@ -1,31 +1,29 @@
 body {
   margin: 0px;
   padding: 0px;
-}
-
-#flex-container {
+  height: 100vh;
   display: flex;
-  border: 3px solid red;
+  flex-direction: column;
+}
+
+header {
+  background-color: cadetblue;
+  height: 75px;
+}
+nav {
+  background-color: bisque;
+  width: 150px;
+}
+main {
+  background-color: chocolate;
+  flex: 1;
+}
+footer{
+  background-color: crimson;
+  height: 150px;
+}
+#root {
+  display: flex;
   flex-direction: row;
+  flex: 1;
 }
-.box {
-  padding: 50px;
-  border: 1px solid black;
-}
-#box1 {
-  /* damos prioridad con el flex basis a este id hasta los 400px */
-  flex-basis: 200px;
-
-  /* capadidad de encogerse */
-  flex-shrink: 1;
-}
-#box2 {
-  flex-basis: 200px;
-
-  flex-shrink: 2;
-} 
-/* #box3{
-  /* flex-grow para adaptar la fila al contenedor padre 
-  flex-grow: 1;
-} */
-
