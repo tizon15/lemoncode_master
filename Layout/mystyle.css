@@ -1,0 +1,17 @@
+body{
+  margin: 0px;
+  padding: 0px;
+}
+.menu {
+  width: 150px;
+  height: 100vh;
+  background-color: cadetblue;
+  float: left;
+}
+
+.content {  
+  float: left;
+  height: 100vh;
+  background-color: bisque;
+  width: calc(100% - 150px);
+}
