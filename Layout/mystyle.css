@@ -2,16 +2,21 @@ body{
   margin: 0px;
   padding: 0px;
 }
-.menu {
-  width: 150px;
-  height: 100vh;
-  background-color: cadetblue;
-  float: left;
+.my-flex-container {
+ display: flex;
+ width: 100vw;
+ height: 100vh;
+ flex-direction: row;
 }
 
-.content {  
-  float: left;
-  height: 100vh;
+.menu {  
+  width: 150px;
+  background-color: cadetblue;
+  border: 5px solid red
+}
+.main {
   background-color: bisque;
-  width: calc(100% - 150px);
+
+  /*flex grow es para rellenar el restante*/
+  flex-grow: 1;
 }
