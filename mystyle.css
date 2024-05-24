@@ -8,10 +8,14 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template: repeat(2 , 1fr) / repeat(3, 1fr);
+  grid-template: repeat(2 , 100px) / repeat(3, 100px);
   border: 1px solid black;
   place-items: center;
-}
+  justify-content: center;
+  align-content: center;
+  /* el place engloba el justify y el aling */
+/*   place-content: center;
+ */}
 .center-container {
   position: relative;
   background-color: white;
@@ -26,4 +30,5 @@ body {
   align-items: center;
   border: 1px solid black;
   background-color: khaki;
+  padding: 25px;
 }
