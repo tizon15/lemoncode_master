@@ -6,27 +6,12 @@ body {
 
 .grid-container {
   display: grid;
-  height: 100%;
-  grid-template-columns: 150px 25px 1fr;
-  grid-template-rows: 100px 1fr 100px;
-  grid-template-areas:
-    "cabecera cabecera cabecera"
-    "menu . body"
-    "pie pie pie";
+  border: 1px solid blue;
+  grid-template-columns: repeat(3, 100px);
+  grid-auto-rows: 100px;
+  /*primer parametro el row el segundo el column */
+  gap: 15px 18px;
 }
-header {
-  background-color: indianred;
-  grid-area: cabecera;
-}
-main {
-  background-color: skyblue;
-  grid-area: body;
-}
-nav {
-  background-color: goldenrod;
-  grid-area: menu;
-}
-footer {
-  background-color: blue;
-  grid-area: pie;
+.item {
+  border: 1px solid black;
 }
