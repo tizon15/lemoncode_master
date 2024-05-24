@@ -17,6 +17,11 @@ nav {
 main {
   background-color: chocolate;
   flex: 1;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  place-content: center;
 }
 footer{
   background-color: crimson;
@@ -26,4 +31,7 @@ footer{
   display: flex;
   flex-direction: row;
   flex: 1;
+}
+img {
+  width:150px;
 }
