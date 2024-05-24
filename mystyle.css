@@ -13,7 +13,7 @@ body {
   place-items: center;
   justify-content: center;
   align-content: center;
-  /* el place engloba el justify y el aling */
+  /* el place engloba el align y el justify */
 /*   place-content: center;
  */}
 .center-container {
