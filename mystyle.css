@@ -6,8 +6,8 @@ body{
 .grid-container{
   display: grid;
 /*grid-template-columns: 100px 100px 300px;*/
- grid-template-columns: 1fr 1fr 1fr;
- grid-template-rows: 100px 100px;
+ grid-template-columns: [row1-start]100px[row1-end]100px[lastline]100px;
+ grid-template-rows: [first]1fr[linesecond]2fr;
  border: 1px solid black;
 }
 .item {
