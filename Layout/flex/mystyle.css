@@ -1,0 +1,37 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: cadetblue;
+  height: 75px;
+}
+nav {
+  background-color: bisque;
+  width: 150px;
+}
+main {
+  background-color: chocolate;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  place-content: center;
+}
+footer{
+  background-color: crimson;
+  height: 150px;
+}
+#root {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+img {
+  width:150px;
+}
