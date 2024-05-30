@@ -1,18 +1,20 @@
-div.container {
-  border: 1px solid #000;
-  padding: 15px;
+.container-a p {
+  color: #00008b;
+  background-color: #ff8c00;
+  font-size: 1.3em;
 }
 
-div.container p {
-  font-size: 125%;
+.container-b p {
+  color: #00008b;
+  background-color: #87ceeb;
 }
 
-div.container > p {
-  font-style: italic;
-  font-weight: bold;
+a font {
+  size: 1.5em;
+  weight: bold;
 }
 
-div.container:hover {
-  background-color: khaki;
+a:hover {
+  color: #ff8c00;
 }
 /*# sourceMappingURL=index.23312501.css.map */

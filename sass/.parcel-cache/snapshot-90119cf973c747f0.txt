@@ -1,4 +1,4 @@
-2422
+2423
 78C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\node-addon-api\except.gypi133615713951100051 0
 62C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\@parcel\fs133615713962568242 1
 83C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\caniuse-lite\data\regions\BG.js133615713975193518 0
@@ -148,7 +148,7 @@
 89C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\@lmdb\lmdb-win32-x64\node.abi108.node133615713956434569 0
 88C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\caniuse-lite\data\features\webgl2.js133615714028364176 0
 83C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\caniuse-lite\data\regions\AL.js133615713960952194 0
-43C:\DEV\Lemoncode\lemoncode_master\sass\dist133615715806371471 1
+43C:\DEV\Lemoncode\lemoncode_master\sass\dist133615721679553424 1
 73C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\.bin\browserslist.cmd133615714044480300 0
 61C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\is-number133615713950210036 1
 76C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\abortcontroller-polyfill133615713960055113 1
@@ -791,7 +791,7 @@
 78C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\@parcel\graph\src\index.js133615713962252840 0
 81C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\@parcel\fs\lib\browser.js.map133615713961059923 0
 78C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\caniuse-lite\data\features133615714029628939 1
-54C:\DEV\Lemoncode\lemoncode_master\sass\dist\index.html133615715805607641 0
+54C:\DEV\Lemoncode\lemoncode_master\sass\dist\index.html133615721103807031 0
 103C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\caniuse-lite\data\features\css-container-queries.js133615713988050646 0
 128C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\node-gyp-build-optional-packages\node_modules\detect-libc\lib\detect-libc.js133615713949398784 0
 102C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\@parcel\core\test\fixtures\local-plugin-config-pkg133615713983217640 1
@@ -1991,7 +1991,7 @@
 91C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\caniuse-lite\data\features\css-masks.js133615713991496206 0
 98C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\@parcel\core\src\requests\ValidationRequest.js133615713991516104 0
 102C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\caniuse-lite\data\features\css-media-resolution.js133615713991699772 0
-53C:\DEV\Lemoncode\lemoncode_master\sass\src\index.html133615705755221134 0
+53C:\DEV\Lemoncode\lemoncode_master\sass\src\index.html133615721092212227 0
 100C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\@parcel\core\lib\requests\WriteBundlesRequest.js133615713991749615 0
 98C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\caniuse-lite\data\features\css-mediaqueries.js133615713991841625 0
 98C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\@parcel\core\test\fixtures\application-targets133615713992266080 1
@@ -2095,7 +2095,7 @@
 94C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\caniuse-lite\data\features\font-loading.js133615714004069506 0
 93C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\caniuse-lite\data\features\font-smooth.js133615714004272393 0
 102C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\caniuse-lite\data\features\font-variant-numeric.js133615714004403474 0
-62C:\DEV\Lemoncode\lemoncode_master\sass\dist\index.23312501.css133615715805607641 0
+62C:\DEV\Lemoncode\lemoncode_master\sass\dist\index.23312501.css133615721679454380 0
 96C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\caniuse-lite\data\features\form-attribute.js133615714004579965 0
 104C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\caniuse-lite\data\features\form-submit-attributes.js133615714004631608 0
 83C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\caniuse-lite\data\regions\FR.js133615714004764770 0
@@ -2245,7 +2245,7 @@
 83C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\caniuse-lite\data\regions\PN.js133615714018630078 0
 91C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\caniuse-lite\data\features\png-alpha.js133615714018660032 0
 89C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\caniuse-lite\data\features\pointer.js133615714018760735 0
-55C:\DEV\Lemoncode\lemoncode_master\sass\src\mystyle.scss133615715803168939 0
+55C:\DEV\Lemoncode\lemoncode_master\sass\src\mystyle.scss133615721677368806 0
 83C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\caniuse-lite\data\regions\PR.js133615714018986422 0
 102C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\caniuse-lite\data\features\prefers-color-scheme.js133615714019046260 0
 104C:\DEV\Lemoncode\lemoncode_master\sass\node_modules\caniuse-lite\data\features\prefers-reduced-motion.js133615714019087618 0
@@ -2420,4 +2420,5 @@
 51C:\DEV\Lemoncode\lemoncode_master\sass\package.json133615714111266433 0
 42C:\DEV\Lemoncode\lemoncode_master\sass\src133615711007123697 1
 64C:\DEV\Lemoncode\lemoncode_master\sass\dist\sass.59712999.js.map133615715805887704 0
-66C:\DEV\Lemoncode\lemoncode_master\sass\dist\index.23312501.css.map133615715806265049 0
+49C:\DEV\Lemoncode\lemoncode_master\sass\.gitignore133615719447310577 0
+66C:\DEV\Lemoncode\lemoncode_master\sass\dist\index.23312501.css.map133615721679533480 0

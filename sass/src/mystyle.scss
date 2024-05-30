@@ -1,25 +1,26 @@
-div.container {
-  padding: 15px;
-  border: 1px solid black;
+$primary-color: darkorange;
+$secondary-color: skyblue;
+$text-color:darkblue;
+$font-base-size: 1.3em;
+$linl-font-size: 1.5em;
 
-  p {
-    font-size: 125%;
+p {
+  .container-a & {
+    font-size: $font-base-size;
+    background-color: $primary-color;
+    color: $text-color;
   }
-
-  & > p {
-    font-style: italic;
-    font-weight: bold;
-  }
-  &:hover{
-    background-color: khaki;
+  .container-b & {
+    background-color: $secondary-color;
+    color: $text-color;
   }
 }
-
-// div.container p {
-//   font-size: 125%;
-// }
-
-// div.container > p {
-//   font-style: italic;
-//   font-weight: bold;
-// }
+a {
+  font {
+    size: $linl-font-size;
+    weight: bold;
+  }
+  &:hover{
+    color: $primary-color;
+  }
+}
