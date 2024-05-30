@@ -1,44 +1,24 @@
-@import url("./base.css");
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
 
-
+html {
+    --primary-color: darkorange;
+}
 header {
-  background: indianred;
-  grid-area: header;
+    background-color: var(--primary-color);
+    padding: 25px;
 }
-
 main {
-  background: skyblue;
-  grid-area: body;
+  color: var(--primary-color);
+  font-size: 125%;
+  margin: 25px;
 }
-
-nav {
-  background: goldenrod;
-  grid-area: menu;
-}
-
-footer {
-  background: blue;
-  grid-area: footer;
-}
-
-@media (width > 451px) and (width < 650px) {
-  .grid-container{
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
-    "header header"
-    "menu body"
-    "footer footer";
-  }
-}
-@media screen and (width<450px) {
-  .grid-container{
-    grid-template-columns: 1fr;
-    grid-template-rows: 100px 250px 1fr 100px;
-    grid-template-areas: 
-    "header"
-    "menu"
-    "body"
-    "footer";
-  }
-  
+.card {
+  --primary-color: green;
+  border: 2px solid var(--primary-color);
+  padding: 15px;
+  border-radius: 8px;
 }
