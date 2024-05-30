@@ -1,0 +1,25 @@
+div.container {
+  padding: 15px;
+  border: 1px solid black;
+
+  p {
+    font-size: 125%;
+  }
+
+  & > p {
+    font-style: italic;
+    font-weight: bold;
+  }
+  &:hover{
+    background-color: khaki;
+  }
+}
+
+// div.container p {
+//   font-size: 125%;
+// }
+
+// div.container > p {
+//   font-style: italic;
+//   font-weight: bold;
+// }
