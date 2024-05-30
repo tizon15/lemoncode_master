@@ -1,49 +1,44 @@
-body {
-  display: flex;
-  flex-direction: column;
-  font-family: sans-serif;
-  padding: 0;
-  margin: 0;
-  height: 100vh;
-}
-.grid-container{
-  display: grid;
-  background-color: darkslategrey;
-  gap: 1rem;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 1fr;
-  flex: 1;
-}
+@import url("./base.css");
+
 
 header {
-  height: 150px;
-  background-color: indianred;
-  padding: 25px;
-  font-size: 150%;
-}
-.item {
-  background-color: khaki;
-  padding: 25px;
-
+  background: indianred;
+  grid-area: header;
 }
 
-@media screen and (max-width: 650px) {
+main {
+  background: skyblue;
+  grid-area: body;
+}
+
+nav {
+  background: goldenrod;
+  grid-area: menu;
+}
+
+footer {
+  background: blue;
+  grid-area: footer;
+}
+
+@media (width > 451px) and (width < 650px) {
   .grid-container{
     grid-template-columns: 1fr 1fr;
-    grid-template-rows:1fr 1fr ;
-  }
-  header {
-    height: initial;
+    grid-template-areas: 
+    "header header"
+    "menu body"
+    "footer footer";
   }
 }
-
-@media screen and (max-width: 450px) {
+@media screen and (width<450px) {
   .grid-container{
     grid-template-columns: 1fr;
-    grid-auto-rows: 1fr ;
+    grid-template-rows: 100px 250px 1fr 100px;
+    grid-template-areas: 
+    "header"
+    "menu"
+    "body"
+    "footer";
   }
-  header {
-    display: none;
-  }
+  
 }
-
