@@ -1,6 +1,24 @@
-.container-1 {
-    display: flex;
-    flex-direction: wrap;
-    padding: 15px;
-    justify-content: space-around;
+header {
+  height: 25%;
+  font-size: 15px;
+  font-family: sans-serif;
+  font-weight: bold;
+  padding: 15px;
+}
+
+nav {
+  height: 25%;
+  display: flex;
+  background-color: darkcyan;
+  flex-direction: row;
+  justify-content: space-around;
+  & > ul {
+    height: 25%;
+    padding: 10px;
+
+  }
+  & > ul:hover {
+    background-color: darkslategrey;
+    display: inline-block;
+  }
 }
