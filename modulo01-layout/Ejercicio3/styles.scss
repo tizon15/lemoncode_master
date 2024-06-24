@@ -1,24 +1,61 @@
+@import "base_colors.scss";
+$small: 300px;
+$medium: 900px;
+
+body {
+  font-family: sans-serif;
+}
+
 header {
   height: 25%;
-  font-size: 15px;
-  font-family: sans-serif;
-  font-weight: bold;
-  padding: 15px;
+  padding: 20px;
+  text-align: center;
+  h1 {
+    margin: 0;
+  }
 }
 
 nav {
-  height: 25%;
-  display: flex;
-  background-color: darkcyan;
-  flex-direction: row;
-  justify-content: space-around;
-  & > ul {
-    height: 25%;
-    padding: 10px;
+  background-color: $navbar-color;
 
+  ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
   }
-  & > ul:hover {
-    background-color: darkslategrey;
-    display: inline-block;
+  li {
+    margin: 0 10px;
+  }
+  a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #fff;
+  }
+  a:hover {
+    background-color: #555;
+  }
+}
+//some CSS
+@media screen and (max-width: $medium) {
+  nav {
+    ul {
+      flex-direction: column;
+      list-style: none;
+      flex-wrap: wrap;
+      align-content: center;
+      width: 100vw;
+    } /* Switch to column for smaller screens */
+    li {
+      flex-grow:1;
+    }
+    li:hover {
+      /* Target list item (li) for hover on small screens */
+      background-color: #555;
+    }
   }
 }

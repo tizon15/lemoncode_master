@@ -1,7 +1,60 @@
-.container-1 {
-  flex-direction: wrap;
+body {
+  font-family: sans-serif;
+}
+
+header {
+  text-align: center;
+  height: 25%;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav {
+  background-color: #008b8b;
+}
+
+nav ul {
   justify-content: space-around;
-  padding: 15px;
+  align-items: center;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  list-style: none;
   display: flex;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav a {
+  color: #fff;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+nav a:hover {
+  background-color: #555;
+}
+
+@media screen and (width <= 900px) {
+  nav ul {
+    flex-flow: column wrap;
+    align-content: center;
+    width: 100vw;
+    list-style: none;
+  }
+
+  nav li {
+    flex-grow: 1;
+  }
+
+  nav li:hover {
+    background-color: #555;
+  }
 }
 /*# sourceMappingURL=index.b8d1660c.css.map */
