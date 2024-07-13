@@ -1,0 +1,47 @@
+/* // @import "base_colors.scss";
+// $font_color: white;
+// $navbar-color: darkcyan;
+// $font-hover: darkslategrey;
+// $small: 300px;
+// $medium: 900px; */
+
+body {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  margin: 25px;
+  text-align: left;
+  h1 {
+    margin: 0;
+  }
+}
+
+nav ul {
+  background-color: darkcyan;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+li {
+  padding:25px;
+  list-style: none;
+}
+ li > a {
+    text-decoration: none;
+    color: white;
+  }
+li:hover {
+  background-color: darkslategrey;
+}
+@media screen and (max-width: 900px) {
+  nav ul{
+    padding: 0px;
+    display: block;
+    text-align: center;
+  }
+}
