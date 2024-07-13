@@ -1,0 +1,111 @@
+@use "base" as *;
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(9, 165px);
+    grid-template-rows: repeat(1, 100px);
+    padding: 10px;
+}
+
+$classes: 'darken', 'ligth';
+
+@for $i from 1 through 4 {
+    $base_color: $primary-color;
+
+    .grid-container-#{$i} {
+
+        @extend .grid-container;
+        @extend .box;
+        @if $i == 1 {
+            $base_color: $primary-color;
+        }
+
+        @else if $i == 2 {
+            $base_color: $secondary-color;
+        }
+
+        @else if $i ==3 {
+            $base_color: $third-color;
+        }
+        @else if $i == 4 {
+            $base_color: $forth-color;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        @each $class in $classes {
+            @for $j from 1 to 6 {
+                @if $class == 'darken' {
+                    .#{$class}-#{$j} {
+                        $dark-color: generate-dark-color($base_color, $j * 5%);
+                        @include apply-palette($dark-color);
+                    }
+                } @else if $class == 'ligth'{
+                    .#{$class}-#{$j} {
+                        $ligth-color: generate-ligth-color($base_color, $j * 5%);
+                        @include apply-palette($ligth-color);
+                    }
+                }
+
+                @if $j ==5 {
+                    .base-color {
+                        @include apply-palette($base_color);
+                    }
+                }
+
+                // @if $j >5 {
+                //     .#{$class}-#{$j} {
+                //         $ligth-color: generate-ligth-color($base_color, $j * 5%);
+                //         @include apply-palette($ligth-color);
+                //     }
+                // }
+
+
+
+            }
+        }
+
+    }
+
+}
+
+// .grid-container-1 {
+//     @extend .grid-container;
+
+//   .item:nth-child(1) {
+//     background-color: lighten($color: $grid-item-base-color, $amount: 50%);
+//   }
+
+//   .item:nth-child(2) {
+//     background-color: darken($color: $grid-item-base-color, $amount: 50%);
+//   }
+
+//   .item:nth-child(3) {
+//     background-color: saturate($color: $grid-item-base-color, $amount: 50%);
+//   }
+
+//   .item:nth-child(4) {
+//     background-color: desaturate($color: $grid-item-base-color, $amount: 50%);
+//   }
+
+//   .item:nth-child(5) {
+//     background-color: fade-in($color: $grid-item-base-color, $amount: 0.5);
+//   }
+
+//   .item:nth-child(6) {
+//     background-color: fade-out($color: $grid-item-base-color, $amount: 0.5);
+//   }
+
+//   .item:nth-child(7) {
+//     background-color: invert($color: $grid-item-base-color);
+//   }
+
+//   .item:nth-child(8) {
+//     background-color: complement($color: $grid-item-base-color);
+//   }
+// }
