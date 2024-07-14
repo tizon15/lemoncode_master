@@ -9,24 +9,30 @@ Para ello con hacer un git clone the la carpeta general **modulo01-layout** es s
 
 ---
 ## Ejercicio 1
-Para poder visualizar este ejercicio después de descargarse el código, hay que abrir un terminal en la carpeta general y escribir este comando
+Para poder visualizar este ejercicio después de descargarse el código, hay que abrir un terminal en la carpeta general y escribir este comando.
+
 **npx parcel ./Ejercicio1/src/index.html**
 
 ---
 ## Ejercicio 2
-<p>Para poder visualizar este ejercicio después de descargarse el código, hay que abrir un terminal en la carpeta general y escribir este comando</p>
+Para poder visualizar este ejercicio después de descargarse el código, hay que abrir un terminal en la carpeta general y escribir este comando
+  
 **npx parcel ./Ejercicio2/src/index.html**
 
 Para poder ver bien el ejercicio, se pueden cambiar uno de los dos temas solo cambiando el fichero scss en el fichero styles.scss
 
 ---
 # Ejercicio 3
-Para poder visualizar este ejercicio después de descargarse el código, hay que abrir un terminal en la carpeta general y escribir este comando
+Para poder visualizar este ejercicio después de descargarse el código, hay que abrir un terminal en la carpeta general y escribir este comando.
+
 **npx parcel ./Ejercicio3/src/index.html**
+
 U otra opción es copiar el path del fichero **index.html** en la barra del navegador y pegar la url copiada
 
 ---
 ## Ejercicio 4
 Para poder visualizar este ejercicio después de descargarse el código, hay que abrir un terminal en la carpeta general y escribir este comando
+
 **npx parcel ./Ejercicio4/src/index.html**
+
 U otra opción es copiar el path del fichero **index.html** en la barra del navegador y pegar la url copiada
