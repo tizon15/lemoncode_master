@@ -1,6 +1,13 @@
 # Bienvenido al laboratorio del modulo 01 - Layout
 En este laboratorio se tratan los enunciados del pdf del modulo 1 layout
 [Enunciado 01 Layout](https://github.com/tizon15/lemoncode_master/blob/laboratorios/modulo01-layout/01-enunciado-ejercicio-laboratorio.pdf)
+
+Para ello hay que abrir un terminal en una carpeta vacia y hacer **git clone https://github.com/tizon15/lemoncode_master.git**
+
+Luego hacer un **git checkout laboratorios** para poder estar en la rama correcta que contiene los laboratorios
+
+Y un **cd modulo01-layout** para situarnos en la carpeta general
+
 ## Tecnologias
 Para este laboratorio compuesto de 4 ejercicios se ha usado HTML5 para la creación de la página, CSS y SCSS para los estilos dependiendo del ejercicio, Nodejs versión 20.15.1 y Visual Studio Code como IDE.
 ### Breve descripción de como ver los resultados
