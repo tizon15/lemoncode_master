@@ -14,8 +14,9 @@ Para poder visualizar este ejercicio después de descargarse el código, hay que
 
 ---
 ## Ejercicio 2
-Para poder visualizar este ejercicio después de descargarse el código, hay que abrir un terminal en la carpeta general y escribir este comando
+<p>Para poder visualizar este ejercicio después de descargarse el código, hay que abrir un terminal en la carpeta general y escribir este comando</p>
 **npx parcel ./Ejercicio2/src/index.html**
+
 Para poder ver bien el ejercicio, se pueden cambiar uno de los dos temas solo cambiando el fichero scss en el fichero styles.scss
 
 ---
