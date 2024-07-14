@@ -10,9 +10,10 @@ Y un **cd modulo01-layout** para situarnos en la carpeta general
 
 ## Tecnologias
 Para este laboratorio compuesto de 4 ejercicios se ha usado HTML5 para la creación de la página, CSS y SCSS para los estilos dependiendo del ejercicio, Nodejs versión 20.15.1 y Visual Studio Code como IDE.
+
 ### Breve descripción de como ver los resultados
 Para estos ejercicios se ha usado de manera global node y parcel para poder crear un servidor local
-Para ello con hacer un git clone the la carpeta general **modulo01-layout** es suficiente
+Una vez descargado el código y situados en la terminal en la carpeta general, hay que realizar un **npm install** para installar el package.json
 
 ---
 ## Ejercicio 1
