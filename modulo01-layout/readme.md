@@ -4,7 +4,7 @@ En este laboratorio se tratan los enunciados del pdf del modulo 1 layout
 ## Tecnologias
 Para este laboratorio compuesto de 4 ejercicios se ha usado HTML5 para la creación de la página, CSS y SCSS para los estilos dependiendo del ejercicio, Nodejs versión 20.15.1 y Visual Studio Code como IDE.
 ### Breve descripción de como ver los resultados
-para estos ejercicios se ha usado de manera global node y parcel para poder crear un servidor local
+Para estos ejercicios se ha usado de manera global node y parcel para poder crear un servidor local
 Para ello con hacer un git clone the la carpeta general **modulo01-layout** es suficiente
 
 ---
@@ -22,7 +22,7 @@ Para poder visualizar este ejercicio después de descargarse el código, hay que
 Para poder ver bien el ejercicio, se pueden cambiar uno de los dos temas solo cambiando el fichero scss en el fichero styles.scss
 
 ---
-# Ejercicio 3
+## Ejercicio 3
 Para poder visualizar este ejercicio después de descargarse el código, hay que abrir un terminal en la carpeta general y escribir este comando.
 
 **npx parcel ./Ejercicio3/src/index.html**
