@@ -1,0 +1,17 @@
+$primary-color: skyblue;
+$secondary-color: indianRed;  
+$third-color: forestGreen;
+$forth-color: salmon;
+
+@mixin apply-palette($color) {
+    $base_color: $color;
+    background-color: $base_color;
+    color: invert($base_color);
+}
+// Funciones para generar colores oscuros y claros
+@function generate-dark-color($base, $factor) {
+    @return darken($base, $factor);
+}
+@function generate-ligth-color($base, $factor) {
+    @return lighten($base, $factor);
+}

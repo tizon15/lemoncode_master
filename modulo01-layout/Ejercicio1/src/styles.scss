@@ -1,0 +1,53 @@
+@use "base" as *;
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(9, 165px);
+    grid-template-rows: repeat(1, 100px);
+    padding: 10px;
+}
+
+@for $i from 1 through 4 {
+    $base_color: null;
+    .grid-container-#{$i} {
+        @extend .grid-container;
+        @if $i ==1 {
+            $base_color: $primary-color;
+        }
+
+        @else if $i ==2 {
+            $base_color: $secondary-color;
+        }
+
+        @else if $i ==3 {
+            $base_color: $third-color;
+        }
+
+        @else if $i ==4 {
+            $base_color: $forth-color;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            margin: 10px;
+        }
+        .base-color {
+            @include apply-palette($base_color);
+        }
+
+        @for $j from 1 through 4 {
+            .darken-#{$j} {
+                $dark-color: generate-dark-color($base_color, $j * 5%);
+                @include apply-palette($dark-color);
+            }
+
+            .ligth-#{$j} {
+                $ligth-color: generate-ligth-color($base_color, $j * 5%);
+                @include apply-palette($ligth-color);
+            }
+        }
+    }
+}
