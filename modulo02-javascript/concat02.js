@@ -13,5 +13,5 @@ const concat_op = (...args) => {
   return copy;
 };
 
-console.log(concat(num, chars));
-console.log(concat_op(num, chars, [true]));
+console.log('CONCAT', concat(num, chars));
+console.log('CONCAT EXTRA', concat_op(num, chars, [true]));
