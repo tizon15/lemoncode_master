@@ -1,7 +1,7 @@
 # Bienvenido al laboratorio del modulo 02 - Javascript
 
 En este laboratorio se tratan los enunciados del pdf del modulo 1 layout
-[Enunciado 02 Javascript](https://github.com/tizon15/lemoncode_master/blob/laboratorios/modulo01-layout/01-enunciado-ejercicio-laboratorio.pdf)
+[Enunciado 02 Javascript](https://github.com/tizon15/lemoncode_master/blob/laboratorios/modulo02-javascript/02-enunciado-ejercicios-laboratorio.pdf)
 
 Para ello hay que abrir un terminal en una carpeta vacia y hacer **git clone https://github.com/tizon15/lemoncode_master.git**
 
