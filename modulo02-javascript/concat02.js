@@ -1,19 +1,17 @@
-// Concat  
+// Concat
 
-const num = [1,2,3,4]
-const chars = ['A','B','C','D']
-const concat= (a,b) => [...a, ...b];
-
+const num = [1, 2, 3, 4];
+const chars = ['A', 'B', 'C', 'D'];
+const concat = (a, b) => [...a, ...b];
 
 // OPCIONAL
-let copy = []
+let copy = [];
 const concat_op = (...args) => {
-    args.forEach(element => {
-        copy = [...copy, ...element]
-    });
-    return copy
+  args.forEach((element) => {
+    copy = [...copy, ...element];
+  });
+  return copy;
 };
-
 
 console.log(concat(num, chars));
 console.log(concat_op(num, chars, [true]));

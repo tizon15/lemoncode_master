@@ -1,19 +1,18 @@
-const firstPerson = { name: "Maria", surname: "Ibañez", country: "SPA" }
+const firstPerson = { name: 'Maria', surname: 'Ibañez', country: 'SPA' };
 // CLONE
 function clone(source) {
-    const clone = { ...source }
-    return clone
+  const clone = { ...source };
+  return clone;
 }
-let thirdPerson = clone(firstPerson)
-console.log(thirdPerson)
+let thirdPerson = clone(firstPerson);
+console.log(thirdPerson);
 
 // MERGE
-let secondPerson = clone(firstPerson)
-secondPerson = {...secondPerson, age:45, married: true} 
-secondPerson.name = 'Paula'
+let secondPerson = clone(firstPerson);
+secondPerson = { ...secondPerson, age: 45, married: true };
+secondPerson.name = 'Paula';
 function merge(source, target) {
-    const mergeObject = { ...target, ...source }
-    return mergeObject
+  const mergeObject = { ...target, ...source };
+  return mergeObject;
 }
-console.log(merge(thirdPerson, secondPerson))
-
+console.log(merge(thirdPerson, secondPerson));
