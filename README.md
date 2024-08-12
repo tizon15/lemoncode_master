@@ -5,4 +5,9 @@ Dichos ejercicios se encuentran dentro de la carpeta que corresponde a cada modu
 
 ## Modulo 01 Layout
 
-En este modulo se encuentran los ejercicios del laboratorio referentes a prácticas de estilos aprendidos en el master
+En este modulo se encuentran los ejercicios del laboratorio referentes a prácticas de estilos aprendidos en el máster [Modulo 01](https://github.com/tizon15/lemoncode_master/tree/master/modulo01-layout)
+
+## Modulo 02 Javascript
+
+En este modulo se encuentran los ejercicios del laboratorio referentes a prácticas de javascript y typescript aprendidos en el máster [Modulo 02](https://github.com/tizon15/lemoncode_master/tree/master/modulo01-layout)
+
