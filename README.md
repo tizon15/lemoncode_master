@@ -9,5 +9,5 @@ En este modulo se encuentran los ejercicios del laboratorio referentes a prácti
 
 ## Modulo 02 Javascript
 
-En este modulo se encuentran los ejercicios del laboratorio referentes a prácticas de javascript y typescript aprendidos en el máster [Modulo 02](https://github.com/tizon15/lemoncode_master/tree/master/modulo01-layout)
+En este modulo se encuentran los ejercicios del laboratorio referentes a prácticas de javascript y typescript aprendidos en el máster [Modulo 02](https://github.com/tizon15/lemoncode_master/tree/master/modulo02-javascript)
 
