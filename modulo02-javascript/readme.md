@@ -1,22 +1,32 @@
 # Bienvenido al laboratorio del modulo 02 - Javascript
 
-En este laboratorio se tratan los enunciados del pdf del modulo 1 layout
+En este laboratorio se tratan los enunciados del pdf del módulo 2 javascript
 [Enunciado 02 Javascript](https://github.com/tizon15/lemoncode_master/blob/laboratorios/modulo02-javascript/02-enunciado-ejercicios-laboratorio.pdf)
 
 Para ello hay que abrir un terminal en una carpeta vacia y hacer **git clone https://github.com/tizon15/lemoncode_master.git**
 
-Luego hacer un **git checkout laboratorios** para poder estar en la rama correcta que contiene los laboratorios
-
-Y un **cd modulo01-layout** para situarnos en la carpeta general
+Luego acceder por medio de la terminal a la carpeta que contiene los ejercicios usando el comando `cd .\lemoncode_master\modulo02-javascript\`
 
 ## Tecnologias
 
-Para este laboratorio compuesto de 4 ejercicios se ha usado HTML5 para la creación de la página, CSS y SCSS para los estilos dependiendo del ejercicio, Nodejs versión 20.15.1 y Visual Studio Code como IDE.
+Para este laboratorio compuesto de 5 ejercicios se ha usado Javascript y Typescript para la creación de los ejercicios, Nodejs versión 20.15.1 y Visual Studio Code como IDE.
+
+---
 
 ### Breve descripción de como ver los resultados
 
-Para estos ejercicios se ha usado de manera global node y parcel para poder crear un servidor local
-Una vez descargado el código y situados en la terminal en la carpeta general, hay que realizar un **npm install** para installar el package.json
+Para estos ejercicios se ha usado de manera global node y ts-node para poder lanzar nuestros ficheros
+Una vez descargado el código y situados en la terminal en la carpeta general, usaremos el comando npx para levantar los ejercicios
+
+Como usamos la libreria ts-node nos preguntará si queremos instalar dicho paquete por lo que una vez lancemos el comando **npx ts-node ./ejercicio**
+
+La primera vez nos saldrá este mensaje
+
+`Need to install the following packages:
+ts-node@10.9.2
+Ok to proceed? (y) y`
+
+Después de instalar el paquete cada vez que ejecutemos el comando anterior no saldrá este mensaje
 
 ---
 
@@ -24,17 +34,23 @@ Una vez descargado el código y situados en la terminal en la carpeta general, h
 
 Para poder visualizar este ejercicio después de descargarse el código, hay que abrir un terminal en la carpeta general y escribir este comando.
 
-**npx parcel ./Ejercicio1/src/index.html**
+***node .\array-operations01.js***
+
+***Ejemplo:***
+
+`PS C:\DEV\PERSONAL\lemoncode_master\modulo02-javascript> node .\array-operations01.js`
 
 ---
 
 ## Ejercicio 2
 
-Para poder visualizar este ejercicio después de descargarse el código, hay que abrir un terminal en la carpeta general y escribir este comando
+Para poder visualizar este ejercicio después de descargarse el código, hay que abrir un terminal en la carpeta general y escribir este comando.
 
-**npx parcel ./Ejercicio2/src/index.html**
+***node .\concat02.js***
 
-Para poder ver bien el ejercicio, se pueden cambiar uno de los dos temas solo cambiando el fichero scss en el fichero styles.scss
+***Ejemplo:***
+
+`PS C:\DEV\PERSONAL\lemoncode_master\modulo02-javascript> node .\concat02.js`
 
 ---
 
@@ -42,16 +58,34 @@ Para poder ver bien el ejercicio, se pueden cambiar uno de los dos temas solo ca
 
 Para poder visualizar este ejercicio después de descargarse el código, hay que abrir un terminal en la carpeta general y escribir este comando.
 
-**npx parcel ./Ejercicio3/src/index.html**
+***node .\clone-merge03.js***
 
-U otra opción es copiar el path del fichero **index.html** en la barra del navegador y pegar la url copiada
+***Ejemplo:***
+
+`PS C:\DEV\PERSONAL\lemoncode_master\modulo02-javascript> node .\clone-merge03.js `
 
 ---
 
 ## Ejercicio 4
 
-Para poder visualizar este ejercicio después de descargarse el código, hay que abrir un terminal en la carpeta general y escribir este comando
+Para poder visualizar este ejercicio después de descargarse el código, hay que abrir un terminal en la carpeta general y escribir este comando.
+Al ser un fichero typescript usamos la librería ts-node para mostrar el resultado
 
-**npx parcel ./Ejercicio4/src/index.html**
+***npx ts-node .\readbooks04.ts***
 
-U otra opción es copiar el path del fichero **index.html** en la barra del navegador y pegar la url copiada
+***Ejemplo:***
+
+`PS C:\DEV\PERSONAL\lemoncode_master\modulo02-javascript> npx ts-node .\readbooks04.ts`
+
+---
+
+## Ejercicio 5
+
+Para poder visualizar este ejercicio después de descargarse el código, hay que abrir un terminal en la carpeta general y escribir este comando.
+Al ser un fichero typescript usamos la librería ts-node para mostrar el resultado
+
+***npx ts-node .\slothmachine05.ts***
+
+***Ejemplo:***
+
+`PS C:\DEV\PERSONAL\lemoncode_master\modulo02-javascript> npx ts-node .\slothmachine05.ts`
