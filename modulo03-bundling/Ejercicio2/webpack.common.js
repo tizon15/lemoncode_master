@@ -1,19 +1,26 @@
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 import url from 'url';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 export default {
   context: path.resolve(__dirname, 'src'),
   entry: {
-    app: './index.ts',
+    app: './index.tsx',
   },
   resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: ['.ts', '.js', '.tsx'],
   },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-react'],
+        },
+      },
       {
         test: /\.(t|j)s?$/,
         exclude: /node_modules/,
@@ -21,10 +28,15 @@ export default {
       },
       {
         test: /\.(png|jpg)$/,
+        exclude: /node_modules/,
         type: 'asset/resource',
+        generator: {
+          filename: 'images/[hash][ext][query]',
+        },
       },
       {
         test: /\.html$/,
+        exclude: /node_modules/,
         loader: 'html-loader',
       },
       {
@@ -41,6 +53,5 @@ export default {
       template: './index.html', //Name of template in ./src
       scriptLoading: 'blocking', // Load the scripts correctly
     }),
-    new CleanWebpackPlugin(),
   ],
 };

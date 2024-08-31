@@ -3,6 +3,7 @@ import { merge } from 'webpack-merge';
 import common from './webpack.common.js';
 import path from 'path';
 import url from 'url';
+import Dotenv from 'dotenv-webpack';
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 
 export default merge(common, {
@@ -37,6 +38,9 @@ export default merge(common, {
     new MiniCssExtractPlugin({
       filename: 'styles/[name].[chunkhash].css',
       chunkFilename: '[id].css',
+    }),
+    new Dotenv({
+      path: './prod.env',
     }),
   ],
 });

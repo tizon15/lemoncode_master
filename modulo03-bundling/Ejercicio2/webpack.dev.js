@@ -7,7 +7,6 @@ const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 
 export default merge(common, {
   mode: 'development',
-  entry: { appStyles: './style.scss' },
   output: {
     filename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'dist'),
