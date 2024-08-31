@@ -1,0 +1,12 @@
+$font-size: large;
+$color: indianred;
+
+.title {
+    font-size: $font-size;
+    color: $color;
+    font-weight: bold;
+}
+
+.image {
+    height: 150px;
+}
