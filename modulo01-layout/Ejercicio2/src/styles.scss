@@ -1,2 +1,58 @@
 @import "_theme_green";
 
+body {
+    padding: 20px;
+}
+
+div {
+    margin: 10px;
+
+    p {
+        font-family: $primary-font;
+        font-size: medium;
+    }
+
+    span {
+        font-family: $secondary-font;
+        font-size: small;
+    }
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    background-color: $primary-color;
+    border: $border-container;
+    border-radius: $border-radius;
+    font-family: $primary-font;
+    margin: 10px;
+
+    p {
+        color: $primary-text-color;
+        font-size: $font-size;
+        font-weight: $font-weight;
+
+    }
+}
+
+.container-important {
+    @extend .container;
+    background-color: $important-color;
+    color: $important-text-color;
+}
+
+.container-warning {
+    @extend .container;
+    background-color: $warning-color;
+    font-style: $warning-font-style;
+}
+
+.box-shadow {
+    @extend .container;
+    background-color: transparent;
+    box-shadow: $box-shadow;
+    margin-top: 10px;
+}
