@@ -11,3 +11,7 @@ En este modulo se encuentran los ejercicios del laboratorio referentes a prácti
 
 En este modulo se encuentran los ejercicios del laboratorio referentes a prácticas de javascript y typescript aprendidos en el máster [Modulo 02](https://github.com/tizon15/lemoncode_master/tree/master/modulo02-javascript)
 
+## Modulo 03 Bundling
+
+En este modulo se encuentran los ejercicios del laboratorio referentes a prácticas de Webpack aprendidos en el máster [Modulo 03](https://github.com/tizon15/lemoncode_master/tree/master/modulo03-bundling)
+
