@@ -19,6 +19,7 @@ export const ChartComponent = () => {
     return (
         <div>
             <img src={image} alt="Logo" className={classes.image} />
+            <h1 className={classes.title}>Hello from Chart Component</h1>
             <p className={classes.title}>
                 Total cost: {total}
             </p>
