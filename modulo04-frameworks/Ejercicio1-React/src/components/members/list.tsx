@@ -75,15 +75,11 @@ export const ListPage: React.FC = () => {
         stickyHeader
         aria-label="sticky table"
       >
-        {/* <div className="list-user-list-container"> */}
         <TableHead>
-          {/* <span className="list-header">Avatar</span> */}
           <TableRow>
             <TableCell className="TableCellHeader">Avatar</TableCell>
             <TableCell className="TableCellHeader">Id</TableCell>
             <TableCell className="TableCellHeader">Name</TableCell>
-            {/* <span className="list-header">Id</span>
-        <span className="list-header">Name</span> */}
           </TableRow>
         </TableHead>
         <TableBody>

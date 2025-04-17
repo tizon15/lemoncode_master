@@ -14,6 +14,7 @@ import {
 import React from "react";
 import { Link } from "react-router-dom";
 import { SitcomListContext } from "../../providers/sitcomProvider";
+import { useDebounce } from "@uidotdev/usehooks";
 
 export interface CharacterEntity {
   id: number;
@@ -42,19 +43,57 @@ export interface LocationEntity {
 
 export const SitcomListPage: React.FC = () => {
   const [characters, setCharacters] = React.useState<CharacterEntity[]>([]);
+  const { characterSearched, setCharacterSearched } =
+    React.useContext(SitcomListContext);
   const [inputSearch, setInputSearch] = React.useState<string>("");
-  const {characterSearched , setCharacterSearched } =React.useContext(SitcomListContext)
+  const debouncedSearchTerm = useDebounce(inputSearch, 500);
+  const [isSearching, setIsSearching] = React.useState(false);
   const [page, setPage] = React.useState(0);
   const [charactersPerPage, setCharactersPerPage] = React.useState(5);
   React.useEffect(() => {
-    fetch(`https://rickandmortyapi.com/api/character`)
-    .then((response) => response.json())
-    .then((json) => setCharacters(json.results));  }, []);
-  const fetchCharactersByName = () => {
-    fetch(`https://rickandmortyapi.com/api/character/?name=${inputSearch}`)
-      .then((response) => response.json())
-      .then((json) => setCharacters(json.results));
+    const initialFetch = async () => {
+      const data = await fetchCharacters();
+      setCharacters(data.results);
+    };
+    initialFetch;
+  }, []);
+  React.useEffect(() => {
+    const searchHN = async () => {
+      let results = [];
+      setIsSearching(true);
+      if (debouncedSearchTerm) {
+        const data = await fetchCharacters(debouncedSearchTerm);
+        results = data.results;
+      } else {
+        const data = await fetchCharacters();
+        results = data.results;
+      }
+
+      setIsSearching(false);
+      setCharacters(results);
+    };
+
+    searchHN();
+  }, [debouncedSearchTerm]);
+  const fetchCharacters = async (searchTerm?: string) => {
+    try {
+      const searchBy = searchTerm ? `?name=${searchTerm}` : "";
+      const response = await fetch(
+        `https://rickandmortyapi.com/api/character/${searchBy}`
+      );
+      const data = response.json();
+      return data;
+    } catch {
+      console.error("Error retrieving the data");
+    }
   };
+
+  const handleInputChange = (e: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
+    setInputSearch(e.target.value);
+  };
+
   const handleChangePage = (
     event: React.MouseEvent<HTMLButtonElement> | null,
     newPage: number
@@ -70,24 +109,23 @@ export const SitcomListPage: React.FC = () => {
   };
   return (
     <>
-        <div className="filter-container">
-          <TextField
-            size="small"
-            value={inputSearch}
-            placeholder="Search by name"
-            onChange={(e) => {
-              setInputSearch(e.target.value);
-            }}
-          ></TextField>
-          <Button
-            variant="contained"
-            onClick={fetchCharactersByName}
-            endIcon={<Search />}
-            sx={{ backgroundColor: "#2f4858", marginLeft: "1rem" }}
-          >
-            Search
-          </Button>
-        </div>
+      <div className="filter-container">
+        <TextField
+          size="small"
+          value={inputSearch}
+          placeholder="Search by name"
+          onChange={handleInputChange}
+        ></TextField>
+        <Button
+          variant="contained"
+          disabled={isSearching}
+          onClick={() => fetchCharacters(inputSearch)}
+          endIcon={<Search />}
+          sx={{ backgroundColor: "#2f4858", marginLeft: "1rem" }}
+        >
+          {isSearching ? "..." : "Search"}
+        </Button>
+      </div>
       <Table
         component={Paper}
         sx={{ minWidth: 700 }}
@@ -95,25 +133,21 @@ export const SitcomListPage: React.FC = () => {
         stickyHeader
         aria-label="sticky table"
       >
-        {/* <div className="list-user-list-container"> */}
         <TableHead>
-          {/* <span className="list-header">Avatar</span> */}
           <TableRow>
             <TableCell className="TableCellHeader">Avatar</TableCell>
             <TableCell className="TableCellHeader">Id</TableCell>
             <TableCell className="TableCellHeader">Name</TableCell>
-            {/* <span className="list-header">Id</span>
-        <span className="list-header">Name</span> */}
           </TableRow>
         </TableHead>
         <TableBody>
           {(charactersPerPage > 0
-            ? characters.slice(
+            ? characters?.slice(
                 page * charactersPerPage,
                 page * charactersPerPage + charactersPerPage
               )
             : characters
-          ).map((member) => (
+          )?.map((member) => (
             <TableRow key={member.id}>
               <TableCell className="TableCellBody">
                 <img src={member.image} />
@@ -122,7 +156,14 @@ export const SitcomListPage: React.FC = () => {
                 <span>{member.id}</span>
               </TableCell>
               <TableCell>
-                <Link to={`/sitcomdetail/${member.name}`} onClick={()=>{setCharacterSearched(member)}}>{member.name}</Link>
+                <Link
+                  to={`/sitcomdetail/${member.name}`}
+                  onClick={() => {
+                    setCharacterSearched(member);
+                  }}
+                >
+                  {member.name}
+                </Link>
               </TableCell>
             </TableRow>
           ))}
@@ -130,7 +171,7 @@ export const SitcomListPage: React.FC = () => {
         <TableFooter>
           <TableRow>
             <TablePagination
-              count={characters.length}
+              count={characters?.length}
               className="TableCellHeader"
               page={page}
               rowsPerPage={charactersPerPage}
