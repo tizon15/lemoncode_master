@@ -1,5 +1,6 @@
 import { FilterAlt } from "@mui/icons-material";
 import {
+  Avatar,
   Button,
   Paper,
   Table,
@@ -13,7 +14,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
-import { ListContext } from "./providers/listProvider";
+import { ListContext } from "../../providers/listProvider";
 interface MemberEntity {
   id: string;
   login: string;
@@ -32,7 +33,8 @@ export const ListPage: React.FC = () => {
   const fetchMembers = () => {
     fetch(`https://api.github.com/orgs/${inputOrganization}/members`)
       .then((response) => response.json())
-      .then((json) => setMembers(json));
+      .then((json) => setMembers(json))
+      .catch(() => setMembers([]));
   };
   const handleChangePage = (
     event: React.MouseEvent<HTMLButtonElement> | null,
@@ -49,24 +51,23 @@ export const ListPage: React.FC = () => {
   };
   return (
     <>
-      <h2>Hello from List page</h2>
-      <div className="filter-container">
-        <TextField
-          size="small"
-          value={inputOrganization}
-          onChange={(e) => {
-            setInputOrganization(e.target.value);
-          }}
-        ></TextField>
-        <Button
-          variant="contained"
-          onClick={fetchMembers}
-          endIcon={<FilterAlt />}
-          sx={{ backgroundColor: "#2f4858", marginLeft: "1rem" }}
-        >
-          Filter
-        </Button>
-      </div>
+        <div className="filter-container">
+          <TextField
+            size="small"
+            value={inputOrganization}
+            onChange={(e) => {
+              setInputOrganization(e.target.value);
+            }}
+          ></TextField>
+          <Button
+            variant="contained"
+            onClick={fetchMembers}
+            endIcon={<FilterAlt />}
+            sx={{ backgroundColor: "#2f4858", marginLeft: "1rem" }}
+          >
+            Filter
+          </Button>
+        </div>
       <Table
         component={Paper}
         sx={{ minWidth: 700 }}
@@ -87,19 +88,21 @@ export const ListPage: React.FC = () => {
         </TableHead>
         <TableBody>
           {(membersPerPage > 0
-            ? members.slice(
+            ? members &&
+              members.slice(
                 page * membersPerPage,
                 page * membersPerPage + membersPerPage
               )
             : members
           ).map((member) => (
             <TableRow key={member.id}>
-              <TableCell className="TableCellBody">
-                <img src={member.avatar_url} />
-              </TableCell>
               <TableCell>
-                <span>{member.id}</span>
+                <Avatar
+                  src={member.avatar_url}
+                  sx={{ width: 56, height: 56 }}
+                />
               </TableCell>
+              <TableCell>{member.id}</TableCell>
               <TableCell>
                 <Link to={`/detail/${member.login}`}>{member.login}</Link>
               </TableCell>
@@ -113,7 +116,7 @@ export const ListPage: React.FC = () => {
               className="TableCellHeader"
               page={page}
               rowsPerPage={membersPerPage}
-              rowsPerPageOptions={[5, 10, 20]}
+              rowsPerPageOptions={[5, 10, 20, { label: "All", value: -1 }]}
               onPageChange={handleChangePage}
               onRowsPerPageChange={handleChangeRowsPerPage}
             />
