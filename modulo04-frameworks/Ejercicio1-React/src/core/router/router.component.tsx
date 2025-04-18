@@ -1,9 +1,4 @@
-import {
-  SitcomListPage,
-  SitcomDetailPage,
-  ListPage,
-  DetailPage,
-} from "@/scenes";
+import { SitcomListPage, SitcomDetailPage, ListPage, DetailPage, Header } from "@/scenes";
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { SitcomListProvider } from "../providers/sitcomProvider";
@@ -13,6 +8,8 @@ import { ListProvider } from "../providers/listProvider";
 export const RouterComponent: React.FC = () => {
   return (
     <Router>
+      <Header />
+
       <Routes>
         <Route
           path={switchRoutes.root}
