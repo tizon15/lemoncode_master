@@ -1,8 +1,7 @@
 import React from "react";
-import { CharacterEntity } from "../components/sitcom/list";
 
 interface InputContext {
-  characterSearched: CharacterEntity;
+  characterSearched: string;
   setCharacterSearched: (value: any) => void;
 }
 export const SitcomListContext = React.createContext<InputContext>({

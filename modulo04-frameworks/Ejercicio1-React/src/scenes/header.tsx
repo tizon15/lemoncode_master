@@ -1,3 +1,4 @@
+import { routes } from "@/core";
 import { Menu } from "@mui/icons-material";
 import { AppBar, Toolbar, IconButton, Typography, Button } from "@mui/material";
 import React from "react";
@@ -12,8 +13,8 @@ export const Header: React.FC = () => {
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             React Laboratorio
           </Typography>
-          <Button color="inherit" href="/">Members List</Button>
-          <Button color="inherit" href="/sitcomList" >Sitcom List</Button>
+          <Button color="inherit" href={routes.root}>Members List</Button>
+          <Button color="inherit" href={routes.sitcomList} >Sitcom List</Button>
         </Toolbar>
       </AppBar>
     </>
