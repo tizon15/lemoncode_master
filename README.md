@@ -15,3 +15,6 @@ En este modulo se encuentran los ejercicios del laboratorio referentes a prácti
 
 En este modulo se encuentran los ejercicios del laboratorio referentes a prácticas de Webpack aprendidos en el máster [Modulo 03](https://github.com/tizon15/lemoncode_master/tree/master/modulo03-bundling)
 
+## Modulo 04 Frameworks
+
+En este modulo se encuentran los ejercicios del laboratorio referentes a prácticas de Frameworks aprendidos en el máster [Modulo 04](https://github.com/tizon15/lemoncode_master/tree/master/modulo04-frameworks)
