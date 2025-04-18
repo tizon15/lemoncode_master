@@ -1,0 +1,29 @@
+.TableCellHeader {
+  background-color: #2f4858 !important;
+  color: white !important;
+  font-weight: bold !important;
+}
+
+.TableCellBody > img {
+  width: 80px;
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem;
+  justify-content: flex-end;
+}
+.layout-center {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+  margin-top: 2rem;
+}
+.layout-app-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr;
+}
