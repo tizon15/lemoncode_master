@@ -85,4 +85,58 @@ En cualquiera de las listas podemos clickar sobre el nombre y nos llevará a la 
 ---
 
 
+## [Ejercicio 2-Vue](https://github.com/tizon15/lemoncode_master/tree/master/modulo04-frameworks/Ejercicio2-Vue)
+
+Este ejercicio esta compuesto por un fichero HTML, un fichero Typescript y una hoja de estilos en CSS, a partir de ello, se ha completado el ejercicio a partir del framework de Nuxt de Vue. 
+
+Para poder visualizar este ejercicio después de descargarse el código, hay que abrir un terminal en la carpeta del ejercicio `C:\XXX\lemoncode_master\modulo04-frameworks\Ejercicio2-Vue`.
+
+Ejecutaremos el comando `pnpm install o npm install` para descargar las dependencias del proyecto, esto nos generará una carpeta llamada `node_modules, .nuxt, .output`
+
+Para el ejercicio 2 framework Vue hemos usado Nuxt como empaquetador y server, dentro de esta carpeta, después de haber ejecutado el comando anterior tendremos la siguiente estructura o similar.
+
+    Ejercicio1
+      |_ .nuxt
+      |_ .output
+      |_ components
+         |_ TheNavigation.vue
+         |_ ToDoForm.vue
+         |_ ToDoList.vue
+      |_ composables
+         |_ useToDos.ts
+      |_ layouts
+         |_ default.vue
+      |_ node_modules
+      |_ pages
+         index.vue
+      |_ public
+      |_ server
+      |_ server
+      |_ shared
+         |_ types
+            |_ index.ts   
+      |_ .gitignore
+      |_ app.vue
+      |_ package.json
+      |_ pnpm-lock.yaml
+      |_ README.md
+      |_ tsconfig.json
+
+El ejercicio consiste en hacer un ToDo List, en este caso usando **Vue 3** y **Nuxt 3** y **Tailwind CSS** como framework de estilos
+
+Para ello solo hemos usado la ruta Home, en el que por medio de un Layout añadimos el header y los componentes necesarios para el ejercicio
+- Un input para añadir el ToDo, que al clickar en el botón de añadir, se añadirá a la lista de tareas pendientes
+- Un checkbox para mostrar las tareas completadas o pendientes
+- Un botón para eliminar todas las tareas completadas
+- Un botón para marcar todas las tareas como completadas
+
+Despues mostramos la lista de tareas, en el que podremos ver el nombre de la tarea
+- Un checkbox para marcar la tarea como completada o no
+- Un botón para eliminar la tarea de la lista
+- Un botón para editar la tarea, que al clickar en el botón de editar, se pondrá el input con el nombre de la tarea, se quitará el checkbox para completarla
+ y al clickar en el botón de guardar, se actualizará la tarea en la lista
+- Un botón para cancelar la edicioón de la tarea, que al clickar se volvera a la vista normal de la tarea sin editar
+Cuando la tarea esta completada, se pondra en un color diferente y el texto se pondra tachado
+---
+
 
