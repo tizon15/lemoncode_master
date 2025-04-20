@@ -87,7 +87,7 @@ En cualquiera de las listas podemos clickar sobre el nombre y nos llevará a la 
 
 ## [Ejercicio 2-Vue](https://github.com/tizon15/lemoncode_master/tree/master/modulo04-frameworks/Ejercicio2-Vue)
 
-Este ejercicio esta compuesto por un fichero HTML, un fichero Typescript y una hoja de estilos en CSS, a partir de ello, se ha completado el ejercicio a partir del framework de Nuxt de Vue. 
+Este ejercicio esta compuesto por un fichero HTML, un fichero Typescript y una hoja de estilos en CSS, a partir de ello, se ha completado el ejercicio a partir del framework de **Nuxt** de Vue. 
 
 Para poder visualizar este ejercicio después de descargarse el código, hay que abrir un terminal en la carpeta del ejercicio `C:\XXX\lemoncode_master\modulo04-frameworks\Ejercicio2-Vue`.
 
