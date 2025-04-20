@@ -5,9 +5,6 @@ import image from "./assets/logo_1.png"; // Import image as a default export
 
 export const ChartComponent = () => {
     const [total, setTotal] = React.useState(0);
-    console.log(classes);
-
-
     React.useEffect(() => {
         const cartItems: CartItem[] = [
             { price: 10, quantity: 2 },
