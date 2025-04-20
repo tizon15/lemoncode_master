@@ -1,5 +1,4 @@
 <template>
   <ToDoList />
-  <hr>
-  <ToDoForm />
+  <ToDoForm class="flex justify-center gap-2"/>
 </template>
