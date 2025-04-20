@@ -63,8 +63,8 @@ const clearAllCompleted = () => todosStore.clearAllCompleted();
             aria-describedby="toggle-all-description"
             class="w-5 h-5"
           />
-          <label for="toggle-all">Show pending</label>
-          <p id="toggle-all-description" class="sr-only">Toggle to show only pending tasks.</p>
+          <label for="toggle-all">Show completed</label>
+          <p id="toggle-all-description" class="sr-only">Toggle to show only completed tasks.</p>
         </div>
       </div>
     </div>
