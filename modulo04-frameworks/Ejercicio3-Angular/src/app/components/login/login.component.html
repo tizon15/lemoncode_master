@@ -1,1 +1,22 @@
-<p>login works!</p>
+<form [formGroup]="form" (submit)="handleLogin()">
+  <mat-form-field>
+    <mat-label>Enter your email</mat-label>
+    <input matInput placeholder="pat@example.com" formControlName="username" (blur)="updateErrorMessage()" required>
+    <mat-hint align="end">Has to be a email master....net </mat-hint>
+    @if (username.invalid) {
+    <mat-error>{{errorMessage()}}</mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Enter your password</mat-label>
+    <input matInput [type]="hide() ? 'password' : 'text'" formControlName="password" />
+    <button mat-icon-button matSuffix (click)="clickEvent($event)" [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide()">
+      <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+    @if (password.invalid) {
+    <mat-error>{{errorMessage()}}</mat-error>
+    }
+  </mat-form-field>
+</form>
+<button mat-button type="submit" [disabled]="form.invalid" (click)="handleLogin()">Submit</button>
