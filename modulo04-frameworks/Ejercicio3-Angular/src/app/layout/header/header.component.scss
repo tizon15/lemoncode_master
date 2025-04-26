@@ -1,0 +1,14 @@
+
+nav {
+  padding: 8px 16px;
+  background-color: var(--mat-sys-secondary-container);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  // justify-content: flex-end;
+  gap: 1rem;
+
+}
+.item-selected {
+  background: color-mix(in srgb,var(--mat-sys-primary) 10%,transparent)
+}
