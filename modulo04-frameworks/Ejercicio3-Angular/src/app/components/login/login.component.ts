@@ -15,6 +15,7 @@ import { AuthService } from '../../services/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { Router } from '@angular/router';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   imports: [
@@ -25,6 +26,7 @@ import { Router } from '@angular/router';
     MatButtonModule,
     MatIconModule,
     MatCardModule,
+    MatProgressSpinnerModule,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
@@ -32,8 +34,9 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   private loginService = inject(AuthService);
+  loading = false;
   private fb = inject(FormBuilder);
-  private router = inject(Router);
+  private route = inject(Router);
   private snackBar = inject(MatSnackBar);
   form = this.fb.group({
     username: ['', [Validators.required, Validators.email]],
@@ -76,14 +79,26 @@ export class LoginComponent implements OnInit {
   }
   handleLogin() {
     const { username, password } = this.form.value;
-    const result = this.loginService.login(username!, password!);
-    if (!result) {
-      this.snackBar.open('Invalid credentials', '❌', {
-        horizontalPosition: 'center',
-        verticalPosition: 'top',
-        duration: 5000,
-        panelClass: ['snackbar-error'],
-      });
-    }
+    this.loading = true;
+    this.loginService.login(username!, password!).subscribe({
+      next: (response) => {
+        this.loading = false;
+        if (!response) {
+          this.snackBar.open('Invalid credentials', '❌', {
+            horizontalPosition: 'center',
+            verticalPosition: 'top',
+            duration: 5000,
+            panelClass: ['snackbar-error'],
+          });
+        } else {
+          localStorage.setItem(
+            'authData',
+            JSON.stringify({ username, password })
+          );
+          this.loginService.userLogged.set(true);
+          this.route.navigate(['/dashboard']);
+        }
+      },
+    });
   }
 }

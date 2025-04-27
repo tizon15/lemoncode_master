@@ -14,11 +14,13 @@ import { PrivateHeaderComponent } from './layout/private-header/private-header.c
 export class AppComponent {
   title = 'Ejercicio3-Angular';
   private loginService = inject(AuthService)
-  isLoggedIn = this.loginService.isLogged();
+  isLoggedIn = this.loginService.userLogged;
   ussername = this.loginService.getUserName();
   constructor(){
+    this.loginService.isLogged()
     effect(() => {
-      this.isLoggedIn = this.loginService.isLoggedIn();
+      this.isLoggedIn()
+      console.log('hola', this.isLoggedIn);
       this.ussername = this.loginService.getUserName();
     })
   }
