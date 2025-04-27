@@ -1,4 +1,4 @@
-import { LoginService } from './services/login.service';
+import { AuthService } from './services/auth.service';
 import { Component, effect, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { PublicHeaderComponent } from './layout/public-header/public-header.component';
@@ -13,11 +13,13 @@ import { PrivateHeaderComponent } from './layout/private-header/private-header.c
 })
 export class AppComponent {
   title = 'Ejercicio3-Angular';
-  private loginService = inject(LoginService)
-  isLoggedIn = this.loginService.isLoggedIn();
+  private loginService = inject(AuthService)
+  isLoggedIn = this.loginService.isLogged();
+  ussername = this.loginService.getUserName();
   constructor(){
     effect(() => {
       this.isLoggedIn = this.loginService.isLoggedIn();
+      this.ussername = this.loginService.getUserName();
     })
   }
 }

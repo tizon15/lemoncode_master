@@ -1,11 +1,17 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit, signal, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  inject,
+  OnInit,
+  signal,
+  ViewEncapsulation,
+} from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { LoginService } from '../../services/login.service';
+import { AuthService } from '../../services/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { Router } from '@angular/router';
@@ -24,8 +30,8 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.scss',
   encapsulation: ViewEncapsulation.None,
 })
-export class LoginComponent implements OnInit{
-  private loginService = inject(LoginService);
+export class LoginComponent implements OnInit {
+  private loginService = inject(AuthService);
   private fb = inject(FormBuilder);
   private router = inject(Router);
   private snackBar = inject(MatSnackBar);
@@ -42,19 +48,13 @@ export class LoginComponent implements OnInit{
   }
   errorMessage = signal('');
 
-  constructor() {
-
-  }
+  constructor() {}
   ngOnInit(): void {
-    this.snackBar.open(
-      'master@lemoncode.net\n12345678',
-      '❌',
-      {
-        horizontalPosition:"center",
-        verticalPosition: 'top',
-        duration: 0,
-      }
-    );
+    this.snackBar.open('master@lemoncode.net\n12345678', '❌', {
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+      duration: 0,
+    });
   }
 
   updateErrorMessage() {
@@ -77,19 +77,13 @@ export class LoginComponent implements OnInit{
   handleLogin() {
     const { username, password } = this.form.value;
     const result = this.loginService.login(username!, password!);
-    if (result) {
-      this.router.navigate(['/dashboard']);
-    }else {
-      this.snackBar.open(
-        'Invalid credentials',
-        '❌',
-        {
-          horizontalPosition:"center",
-          verticalPosition: 'top',
-          duration: 0,
-          panelClass: ['snackbar-error']
-        }
-      );
+    if (!result) {
+      this.snackBar.open('Invalid credentials', '❌', {
+        horizontalPosition: 'center',
+        verticalPosition: 'top',
+        duration: 5000,
+        panelClass: ['snackbar-error'],
+      });
     }
   }
 }
