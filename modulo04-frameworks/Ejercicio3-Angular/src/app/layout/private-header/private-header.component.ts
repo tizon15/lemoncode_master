@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-private-header',
@@ -10,5 +11,9 @@ import { RouterModule } from '@angular/router';
   styleUrl: './private-header.component.scss'
 })
 export class PrivateHeaderComponent {
-
+  private loginService = inject(LoginService)
+  username = this.loginService.getUserName();
+  logout() {
+    this.loginService.logout();
+  }
 }

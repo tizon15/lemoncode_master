@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, signal, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -22,6 +22,7 @@ import { Router } from '@angular/router';
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
+  encapsulation: ViewEncapsulation.None,
 })
 export class LoginComponent implements OnInit{
   private loginService = inject(LoginService);
@@ -47,7 +48,7 @@ export class LoginComponent implements OnInit{
   ngOnInit(): void {
     this.snackBar.open(
       'master@lemoncode.net\n12345678',
-      'Close',
+      '❌',
       {
         horizontalPosition:"center",
         verticalPosition: 'top',
@@ -78,6 +79,17 @@ export class LoginComponent implements OnInit{
     const result = this.loginService.login(username!, password!);
     if (result) {
       this.router.navigate(['/dashboard']);
+    }else {
+      this.snackBar.open(
+        'Invalid credentials',
+        '❌',
+        {
+          horizontalPosition:"center",
+          verticalPosition: 'top',
+          duration: 0,
+          panelClass: ['snackbar-error']
+        }
+      );
     }
   }
 }

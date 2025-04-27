@@ -1,9 +1,11 @@
-import { Injectable, signal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoginService {
+  private route = inject(Router);
   isLoggedIn = signal(false);
   private username: string = 'master@lemoncode.net';
   private password: string = '12345678';
@@ -19,7 +21,7 @@ export class LoginService {
   }
   logout() {
     this.isLoggedIn.set(false);
-    return true;
+    this.route.navigate(['/home'])
   }
   isLogged(): boolean {
     return this.isLoggedIn();
