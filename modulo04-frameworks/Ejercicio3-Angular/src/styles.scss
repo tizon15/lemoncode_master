@@ -1,6 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-@use "@angular/material" as mat;
-
 html,
 body {
   height: 100%;
@@ -10,11 +8,4 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.snackbar-error {
-  @include mat.snack-bar-overrides(
-    (
-      supporting-text-color: var(--mat-sys-error),
-      container-color: var(--mat-sys-error-container),
-    )
-  );
-}
+
