@@ -1,11 +1,15 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { LoginService } from '../../services/login.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatCardModule } from '@angular/material/card';
+import { Router } from '@angular/router';
+
 @Component({
   imports: [
     ReactiveFormsModule,
@@ -14,13 +18,16 @@ import { LoginService } from '../../services/login.service';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    MatCardModule,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
   private loginService = inject(LoginService);
   private fb = inject(FormBuilder);
+  private router = inject(Router);
+  private snackBar = inject(MatSnackBar);
   form = this.fb.group({
     username: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required],
@@ -34,10 +41,26 @@ export class LoginComponent {
   }
   errorMessage = signal('');
 
-  constructor() {}
+  constructor() {
+
+  }
+  ngOnInit(): void {
+    this.snackBar.open(
+      'master@lemoncode.net\n12345678',
+      'Close',
+      {
+        horizontalPosition:"center",
+        verticalPosition: 'top',
+        duration: 0,
+      }
+    );
+  }
 
   updateErrorMessage() {
-    if (this.username.hasError('required') || this.password.hasError('required')) {
+    if (
+      this.username.hasError('required') ||
+      this.password.hasError('required')
+    ) {
       this.errorMessage.set('You must enter a value');
     } else if (this.username.hasError('email')) {
       this.errorMessage.set('Not a valid email');
@@ -52,6 +75,9 @@ export class LoginComponent {
   }
   handleLogin() {
     const { username, password } = this.form.value;
-    this.loginService.login(username!, password!);
+    const result = this.loginService.login(username!, password!);
+    if (result) {
+      this.router.navigate(['/dashboard']);
+    }
   }
 }

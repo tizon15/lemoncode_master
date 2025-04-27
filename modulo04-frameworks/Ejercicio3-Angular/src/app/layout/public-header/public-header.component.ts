@@ -4,9 +4,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-public-header',
   imports: [RouterModule, MatButtonModule, MatIconModule],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
+  templateUrl: './public-header.component.html',
+  styleUrl: './public-header.component.scss',
 })
-export class HeaderComponent {}
+export class PublicHeaderComponent {}

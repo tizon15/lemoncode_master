@@ -1,2 +1,7 @@
-<app-header></app-header>
+@if (isLoggedIn){
+  <app-private-header></app-private-header>
+} @else{
+  <app-public-header></app-public-header>
+}
+
 <router-outlet></router-outlet>
