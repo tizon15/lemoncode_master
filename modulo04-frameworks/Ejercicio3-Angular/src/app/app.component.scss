@@ -1,0 +1,29 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+header {
+
+    padding: 8px 16px;
+    background-color: var(--mat-sys-secondary-container);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  .header-container{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+}
+main {
+  flex: 1; /* Hace que el contenido ocupe el espacio disponible */
+}
+
+app-footer {
+  background-color: var(--mat-sys-secondary-container);
+  padding: 8px 16px
+}

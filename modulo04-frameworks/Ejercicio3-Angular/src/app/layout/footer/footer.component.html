@@ -1,0 +1,18 @@
+<div class="footer-container">
+  <img src="lemoncode.png" alt="lemoncodeLogo">
+  <h4>{{title}}</h4>
+  @if(!isLoggedIn())
+  {
+  <a mat-button routerLink="/home" routerLinkActive="item-selected ">
+    <mat-icon>home</mat-icon>
+    Home
+  </a>
+
+  } @else {
+  <a mat-button routerLink="/dashboard" routerLinkActive="item-selected ">
+    <mat-icon>dashboard</mat-icon>
+    Dashboard
+  </a>
+  }
+
+</div>
