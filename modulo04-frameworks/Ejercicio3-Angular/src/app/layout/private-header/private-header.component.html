@@ -1,0 +1,20 @@
+
+  <nav>
+
+    <a mat-button routerLink="/dashboard" routerLinkActive="item-selected ">
+      <mat-icon>dashboard</mat-icon>
+      Dashboard
+    </a>
+    <a mat-button routerLink="/galery" routerLinkActive="item-selected ">
+      <mat-icon>perm_media</mat-icon>
+      Galery
+    </a>
+    <a mat-button routerLink="/crud" routerLinkActive="item-selected ">Users</a>
+    <a mat-button routerLink="/profile" routerLinkActive="item-selected ">Profile</a>
+
+  </nav>
+  <div>
+    <label for="user">Hello, {{username}}</label>
+    <a mat-button (click)="logout()">Logout</a>
+
+  </div>

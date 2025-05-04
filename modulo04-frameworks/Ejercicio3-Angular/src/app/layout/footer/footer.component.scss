@@ -1,0 +1,8 @@
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.item-selected {
+  background: color-mix(in srgb,var(--mat-sys-primary) 10%,transparent)
+}

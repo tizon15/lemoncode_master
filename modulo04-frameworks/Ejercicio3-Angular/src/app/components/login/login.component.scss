@@ -1,0 +1,23 @@
+@use "@angular/material" as mat;
+.login-card {
+  margin-top: 2em;
+  gap: 1em;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.snackbar-error {
+  @include mat.snack-bar-overrides(
+    (
+      supporting-text-color: var(--mat-sys-error),
+      container-color: var(--mat-sys-error-container),
+    )
+  );
+}

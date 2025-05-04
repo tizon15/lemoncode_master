@@ -1,0 +1,15 @@
+<header>
+  <div class="header-container">
+    <img src="lemoncode.png" alt="lemoncodeLogo">
+    <h4>{{title}}</h4>
+  </div>
+  @if ((isLoggedIn())){
+  <app-private-header class="header-container"></app-private-header>
+  } @else{
+  <app-public-header></app-public-header>
+  }
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>
+<app-footer></app-footer>

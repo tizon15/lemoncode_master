@@ -36,6 +36,8 @@ Para poder visualizar este ejercicio después de descargarse el código, hay que
 
 Ejecutaremos el comando `npm install` para descargar las dependencias del proyecto, esto nos generará una carpeta llamada `node_modules`
 
+Despues ejecutaremos `npm start` para arrancar el servidor
+
 Para el ejercicio 1 framework React hemos usado Webpack como emaquetador de módulos, dentro de esta carpeta, después de haber ejecutado el comando anterior tendremos la siguiente estructura.
 
     Ejercicio1
@@ -93,6 +95,8 @@ Para poder visualizar este ejercicio después de descargarse el código, hay que
 
 Ejecutaremos el comando `pnpm install o npm install` para descargar las dependencias del proyecto, esto nos generará una carpeta llamada `node_modules, .nuxt, .output`
 
+Despues ejecutaremos `pnpm dev` para arrancar el servidor
+
 Para el ejercicio 2 framework Vue hemos usado Nuxt como empaquetador y server, dentro de esta carpeta, después de haber ejecutado el comando anterior tendremos la siguiente estructura o similar.
 
     Ejercicio1
@@ -140,3 +144,110 @@ Cuando la tarea esta completada, se pondra en un color diferente y el texto se p
 ---
 
 
+## [Ejercicio 3-Angular](https://github.com/tizon15/lemoncode_master/tree/master/modulo04-frameworks/Ejercicio3-Angular)
+
+Este ejercicio esta compuesto por ficheros HTML, ficheros Typescript y estilos en SCSS, a partir de ello, se ha completado el ejercicio a partir del framework de **Angular** . 
+
+Para poder visualizar este ejercicio después de descargarse el código, hay que abrir un terminal en la carpeta del ejercicio `C:\XXX\lemoncode_master\modulo04-frameworks\Ejercicio3-Angular`.
+
+Ejecutaremos el comando `pnpm install o npm install` para descargar las dependencias del proyecto, esto nos generará una carpeta llamada `node_modules` y el fichero `pnpm-lock.yaml o package-lock.json`
+
+Después usaremos el comando `pnpm start o npm start` para arrancar el servidor y poder ver nuestra página en `localhost:4200`
+
+Para el ejercicio 3 framework Angular hemos usado el propio bundling de Angular como empaquetador y server, dentro de esta carpeta, después de haber ejecutado el comando anterior tendremos la siguiente estructura o similar.
+
+    Ejercicio3
+      |_ .angular
+      |_ .node_modules
+      |_ public
+      |_ src
+         |_app
+            |_ components
+               |_ about
+               |_ crud
+               |_ dashboard
+               |_ galery
+               |_ home
+               |_ login
+               |_ profile
+            |_ guards
+            |_ layout
+               |_ footer
+               |_ private-header
+               |_ public-header
+            |_ models
+            |_ services  
+            app.component.html
+            app.component.scss
+            app.component.ts
+            app.config.ts
+            app.router.ts
+         index.html
+         main.ts
+         styles.scss
+      |_ .gitignore
+      |_ angular.json
+      |_ package.json
+      |_ pnpm-lock.yaml
+      |_ README.md
+      |_ tsconfig.app.json
+      |_ tsconfig.json
+
+El ejercicio consiste en hacer una página de login que, dependiendo de si el usuario ha iniciado sesión o no, muestra diferentes cosas.
+
+### Inicio
+
+Al comenzar, iremos a la URL proporcionada anteriormente:  
+`localhost:4200`  
+Al no estar registrados, nos llevará a la página **Home**.
+
+#### Navegación en Home
+
+En el menú de Home solo se muestran tres opciones:
+
+- Home
+- Login
+- About
+
+#### Acceso a páginas privadas
+
+Como el ejercicio trata de un login con páginas privadas y públicas, si cambiamos la URL a  
+`localhost:4200/dashboard`  
+y no estamos registrados, automáticamente volveremos a la página **Login**.
+
+Esto se debe al guard configurado en nuestras rutas, que impide acceder a páginas privadas sin haber iniciado sesión con las credenciales correctas.
+
+#### Página de Login
+
+En la página de Login, se muestran las credenciales necesarias para acceder a las páginas privadas:
+
+- **Username:** `master@lemoncode.net`
+- **Password:** `12345678`
+
+El formulario de validación contiene dos campos: uno para el usuario y otro para la contraseña. El usuario debe tener formato de email, y se mostrará un mensaje si el formato es incorrecto. Además, si los campos están vacíos, el botón de **submit** permanecerá deshabilitado.
+
+#### Comportamiento tras el login
+
+Al enviar el formulario, gracias a un observable de **RxJS**, habrá un delay de 2 segundos para comprobar si las credenciales introducidas son correctas.
+
+- **Si las credenciales son correctas:**  
+  Se redirige automáticamente a la página **Dashboard** mediante el router y el menú de navegación cambia a:
+
+  - Dashboard
+  - Gallery
+  - Users
+  - Profile
+  - Hello, master@lemoncode.net
+  - Logout
+
+  El footer también cambiará de Home a Dashboard.
+
+- **Si las credenciales son incorrectas:**  
+  Después de mostrar un loading spinner durante dos segundos, aparecerá el mensaje:  
+  `Invalid credentials`
+
+#### Objetivo principal
+
+El objetivo principal de este ejercicio es registrar toda la información en el **localStorage** y utilizar las nuevas funcionalidades de Angular, como las **Signals**, para hacer la página reactiva. Se han empleado **effect**, **computed** y **signal** de Angular a lo largo del desarrollo.
+
+---
