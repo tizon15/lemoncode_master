@@ -1,6 +1,6 @@
-import { effect, inject, Injectable, signal } from '@angular/core';
+import { effect, inject, Injectable, signal, computed } from '@angular/core';
 import { Router } from '@angular/router';
-import { delay, Observable, of } from 'rxjs';
+import { delay, Observable, of, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,37 +8,37 @@ import { delay, Observable, of } from 'rxjs';
 export class AuthService {
   private route = inject(Router);
   private readonly username: string = 'master@lemoncode.net';
+  // amazonq-ignore-next-line
   private readonly password: string = '12345678';
-  private readonly authData = localStorage.getItem('authData');
-  userLogged = signal(false);
+  private authState = signal<{ username: string; password: string } | null>(
+    JSON.parse(localStorage.getItem('authData') || 'null')
+  );
+  userLogged = computed(() => !!this.authState());
   constructor() {
-    effect(() => {
-      this.authData;
-    });
   }
 
   login(username: string, password: string): Observable<boolean> {
     if (username === this.username && password === this.password) {
-      return of(true).pipe(delay(2000));
+      return of(true).pipe(
+        delay(2000),
+        tap(() => {
+          const authData = { username, password };
+          localStorage.setItem('authData', JSON.stringify(authData));
+          this.authState.set(authData);
+        })
+      );
     }
     return of(false).pipe(delay(2000));
   }
   logout(): void {
     localStorage.removeItem('authData');
-    this.userLogged.set(false);
+    this.authState.set(null);
     this.route.navigate(['/home']);
   }
   isLogged(): boolean {
-    if (this.authData) {
-      this.userLogged.set(true);
-      return true;
-    }
-    return false ;
+    return this.userLogged();
   }
   getUserName() {
-    if (this.authData) {
-      const { username } = JSON.parse(this.authData);
-      return username;
-    }
+    return this.authState()?.username || '';
   }
 }

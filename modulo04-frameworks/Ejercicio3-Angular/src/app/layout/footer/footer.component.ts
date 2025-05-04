@@ -16,8 +16,7 @@ export class FooterComponent {
   isLoggedIn = this.authService.userLogged;
   constructor() {
     effect(() => {
-      this.isLoggedIn();
-      console.log(this.isLoggedIn());
+      this.authService.isLogged();
     });
   }
 }

@@ -15,7 +15,8 @@ export class PrivateHeaderComponent {
   username!:string
   constructor(){
     effect(() => {
-      this.username = this.loginService.getUserName();
+      this.loginService.isLogged() // Check if the user is logged in
+      this.username = this.loginService.getUserName(); // Get the username from the AuthService
     })
   }
   logout() {

@@ -60,16 +60,17 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  updateErrorMessage() {
-    if (
-      this.username.hasError('required') ||
-      this.password.hasError('required')
-    ) {
-      this.errorMessage.set('You must enter a value');
-    } else if (this.username.hasError('email')) {
-      this.errorMessage.set('Not a valid email');
+  updateErrorMessage(control: 'username' | 'password') {
+    if (this.form.controls[control]?.errors) {
+      if (this.form.controls[control].errors['required']) {
+        return 'This field is required';
+      } else if (this.form.controls[control].errors['email']) {
+        return 'Invalid email format';
+      } else {
+        return 'Invalid credentials';
+      }
     } else {
-      this.errorMessage.set('');
+      return '';
     }
   }
 
@@ -82,23 +83,18 @@ export class LoginComponent implements OnInit {
     this.loading = true;
     this.loginService.login(username!, password!).subscribe({
       next: (response) => {
-        this.loading = false;
-        if (!response) {
+        if (response) {
+          this.route.navigate(['/dashboard']);
+        } else {
           this.snackBar.open('Invalid credentials', '❌', {
             horizontalPosition: 'center',
             verticalPosition: 'top',
             duration: 5000,
             panelClass: ['snackbar-error'],
           });
-        } else {
-          localStorage.setItem(
-            'authData',
-            JSON.stringify({ username, password })
-          );
-          this.loginService.userLogged.set(true);
-          this.route.navigate(['/dashboard']);
+          this.loading = false;
         }
-      },
+      }
     });
   }
 }
