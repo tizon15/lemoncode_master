@@ -52,7 +52,7 @@ describe('mapEmployeeSumaryFromApiToVM', () => {
     expect(result.employees[0]).toEqual(mockEmployees[0]);
     expect(result.employees[1]).toEqual(mockEmployees[1]);
   });
-  it('should map project with empty employees array', () => {
+  it('should map project with empty employees', () => {
     // Arrange
     const mockProject: apiModel.Project = {
       id: '1',
@@ -73,3 +73,4 @@ describe('mapEmployeeSumaryFromApiToVM', () => {
     expect(result.employees).toHaveLength(0);
   });
 });
+
