@@ -1,18 +1,14 @@
-import { Character } from './character.api-model';
-import { Lookup } from '#common/models';
-import { mockCities, mockCharacterCollection } from './character.mock-data';
 import axios from 'axios';
-const API_URL = 'https://rickandmortyapi.com/api/character';
+import { Character } from './character.api-model';
 
 export const getCharacter = async (id: string): Promise<Character> => {
-  const {data} = await axios.get(`${API_URL}/${id}`)
+  const {data} = await axios.get(`/api/character/${id}`)
   return data;
 };
 
-export const getCities = async (): Promise<Lookup[]> => {
-  return mockCities;
-};
-
 export const saveCharacter = async (character: Character): Promise<boolean> => {
+  console.log('Hola', character)
+  const response = await axios.put(`/api/character/${character.id}`, character)
+  console.log(response)
   return true;
 };
