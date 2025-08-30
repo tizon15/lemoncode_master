@@ -10,6 +10,7 @@ export interface Character {
   image: string;
   episode: string[];
   url: string;
+  bestSentence?: string;
 }
 export interface Origin {
   name: string;

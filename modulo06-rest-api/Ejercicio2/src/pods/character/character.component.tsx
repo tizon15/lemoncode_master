@@ -85,6 +85,13 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
               disabled={disableForm}
               variant={disableForm ? 'filled' : 'outlined'}
             />
+            <TextFieldComponent
+              name="bestSentence"
+              label="Best Sentence"
+              disabled={disableForm}
+              variant={disableForm ? 'filled' : 'outlined'}
+            />
+
             {character.episode.length > 0 && (
               <List
                 sx={{
@@ -97,7 +104,7 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
               >
                 {character.episode.map((value, index) =>
                   disableForm ? (
-                    <ListItem key={value} alignItems='center' divider={true}>
+                    <ListItem key={value} alignItems="center" divider={true}>
                       <ListItemText key={index} primary={value} />
                     </ListItem>
                   ) : (
