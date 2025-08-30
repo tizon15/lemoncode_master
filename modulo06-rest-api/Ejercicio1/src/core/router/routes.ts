@@ -12,8 +12,8 @@ export const switchRoutes: SwitchRoutes = {
   root: '/',
   characterCollection: '/characters',
   createCharacter: '/character/create',
-  editCharacter: '/character/edit/:id',
-  viewCharacter: '/character/:id'
+  editCharacter: '/character/:id',
+  viewCharacter: '/character/:id/:isReadOnly?'
 };
 
 type NavigationFunction = (id: number, isReadOnly: boolean) => string;
@@ -26,5 +26,5 @@ interface LinkRoutes extends Omit<SwitchRoutes, 'editCharacter' | 'viewCharacter
 export const linkRoutes: LinkRoutes = {
   ...switchRoutes,
   editCharacter: (id) => generatePath(switchRoutes.editCharacter, { id }),
-  viewCharacter: (id) => generatePath(switchRoutes.viewCharacter, { id }),
+  viewCharacter: (id, isReadOnly) => generatePath(switchRoutes.viewCharacter, { id, isReadOnly:true }),
 };

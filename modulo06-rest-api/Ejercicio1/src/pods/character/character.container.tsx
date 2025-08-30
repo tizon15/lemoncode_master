@@ -6,7 +6,6 @@ import { mapCharacterFromApiToVm, mapCharacterFromVmToApi } from './character.ma
 import { Character, createEmptyCharacter } from './character.vm';
 
 export const CharacterContainer: React.FunctionComponent = (props) => {
-  const {isReadOnly}=props
   const [character, setCharacter] = React.useState<Character>(createEmptyCharacter());
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();

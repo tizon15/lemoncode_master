@@ -5,3 +5,8 @@ export const root = css`
   flex-direction: column;
   justify-content: center;
 `;
+
+export const headFormContainer = css`
+  display:flex;
+  align-items: center;
+  gap: 2rem;`
