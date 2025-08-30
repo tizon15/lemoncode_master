@@ -6,7 +6,8 @@ import { useCharacterCollection } from './character-collection.hook';
 import { CharacterCollectionComponent } from './character-collection.component';
 
 export const CharacterCollectionContainer = () => {
-  const { characterCollection, loadCharacterCollection } = useCharacterCollection();
+  const { characterCollection, loadCharacterCollection } =
+    useCharacterCollection();
   const navigate = useNavigate();
 
   React.useEffect(() => {
@@ -17,13 +18,16 @@ export const CharacterCollectionContainer = () => {
     navigate(linkRoutes.createCharacter);
   };
 
-  const handleEdit = (id: string) => {
+  const handleEdit = (id: number) => {
     navigate(linkRoutes.editCharacter(id));
   };
 
-  const handleDelete = async (id: string) => {
+  const handleDelete = async (id: number) => {
     await deleteCharacter(id);
     loadCharacterCollection();
+  };
+  const handleView = async (id: number) => {
+    navigate(linkRoutes.viewCharacter(id));
   };
 
   return (
@@ -32,6 +36,7 @@ export const CharacterCollectionContainer = () => {
       onCreateCharacter={handleCreateCharacter}
       onEdit={handleEdit}
       onDelete={handleDelete}
+      onView={handleView}
     />
   );
 };

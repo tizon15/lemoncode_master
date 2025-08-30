@@ -6,7 +6,7 @@ const API_URL = 'https://rickandmortyapi.com/api/character';
 
 export const getCharacter = async (id: string): Promise<Character> => {
   const {data} = await axios.get(`${API_URL}/${id}`)
-  return data.results;
+  return data;
 };
 
 export const getCities = async (): Promise<Lookup[]> => {

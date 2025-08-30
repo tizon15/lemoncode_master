@@ -1,46 +1,53 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import CardActions from '@mui/material/CardActions';
-import Typography from '@mui/material/Typography';
-import Avatar from '@mui/material/Avatar';
-import IconButton from '@mui/material/IconButton';
-import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardHeader from '@mui/material/CardHeader';
+import CardMedia from '@mui/material/CardMedia';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import * as React from 'react';
 import { CharacterEntityVm } from '../character-collection.vm';
 import * as classes from './character-card.styles';
 
 interface Props {
   character: CharacterEntityVm;
-  onEdit: (id: string) => void;
-  onDelete: (id: string) => void;
+  onEdit: (id: number) => void;
+  onDelete: (id: number) => void;
+  onView: (id: number) => void;
 }
 
 export const CharacterCard: React.FunctionComponent<Props> = (props) => {
-  const { character, onEdit, onDelete } = props;
+  const { character, onEdit, onDelete, onView } = props;
 
   return (
     <Card>
-      <CardHeader
-        avatar={<Avatar aria-label="Character">{character.rating}</Avatar>}
-        title={character.name}
-        subheader={character.address}
-      />
+      <CardHeader title={character.name} subheader={character.species} />
       <CardContent>
         <div className={classes.content}>
           <CardMedia
-            image={character.picture}
+            image={character.image}
             title={character.name}
-            style={{ height: 0, paddingTop: '56.25%' }}
+            style={{
+              height: 0,
+              paddingTop: '56.25%',
+              backgroundSize: 'contain',
+            }}
           />
-          <Typography variant="subtitle1" gutterBottom>
-            {character.description}
+          <Typography variant="h6" gutterBottom>
+            {character.status}
+          </Typography>
+          <Typography variant="caption" gutterBottom>
+            {character.gender}
           </Typography>
         </div>
       </CardContent>
       <CardActions>
+        <IconButton onClick={() => onView(character.id)}>
+          <VisibilityIcon />
+        </IconButton>
         <IconButton onClick={() => onEdit(character.id)}>
           <EditIcon />
         </IconButton>

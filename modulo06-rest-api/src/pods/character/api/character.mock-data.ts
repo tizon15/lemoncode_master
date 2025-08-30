@@ -1,7 +1,7 @@
 import { Character } from './character.api-model';
 import { Lookup } from '#common/models';
-
-export const mockCharacterCollection: Character[] = [
+// Character[]
+export const mockCharacterCollection: any = [
   {
     id: '1',
     type: 'hotel',

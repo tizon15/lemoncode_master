@@ -1,6 +1,6 @@
 import { CharacterEntityApi } from './character-collection.api-model';
-
-export const mockCharacterCollection: CharacterEntityApi[] = [
+// CharacterEntityApi[]
+export const mockCharacterCollection: any  = [
   {
     id: '1',
     type: 'hotel',
