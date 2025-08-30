@@ -14,9 +14,9 @@ import * as classes from './character-card.styles';
 
 interface Props {
   character: CharacterEntityVm;
-  onEdit: (id: number) => void;
+  onEdit: (id: number, isReadOnly: boolean) => void;
   onDelete: (id: number) => void;
-  onView: (id: number) => void;
+  onView: (id: number, isReadOnly: boolean) => void;
 }
 
 export const CharacterCard: React.FunctionComponent<Props> = (props) => {
@@ -45,10 +45,10 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
         </div>
       </CardContent>
       <CardActions>
-        <IconButton onClick={() => onView(character.id)}>
+        <IconButton onClick={() => onView(character.id, true)}>
           <VisibilityIcon />
         </IconButton>
-        <IconButton onClick={() => onEdit(character.id)}>
+        <IconButton onClick={() => onEdit(character.id, false)}>
           <EditIcon />
         </IconButton>
         <IconButton onClick={() => onDelete(character.id)}>

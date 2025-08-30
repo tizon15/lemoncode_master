@@ -19,7 +19,7 @@ export const CharacterCollectionContainer = () => {
   };
 
   const handleEdit = (id: number) => {
-    navigate(linkRoutes.editCharacter(id));
+    navigate(linkRoutes.editCharacter(id, false));
   };
 
   const handleDelete = async (id: number) => {
@@ -27,7 +27,7 @@ export const CharacterCollectionContainer = () => {
     loadCharacterCollection();
   };
   const handleView = async (id: number) => {
-    navigate(linkRoutes.viewCharacter(id));
+    navigate(linkRoutes.viewCharacter(id, true));
   };
 
   return (

@@ -13,12 +13,11 @@ import * as classes from './character.styles';
 
 interface Props {
   character: Character;
-  cities: Lookup[];
   onSave: (character: Character) => void;
 }
 
 export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
-  const { character, cities, onSave } = props;
+  const { character,  onSave } = props;
 
   return (
     <Formik
@@ -32,7 +31,6 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
           <TextFieldComponent name="name" label="Name" />
           <TextFieldComponent name="address" label="Address" />
           <RatingComponent name="rating" max={5} />
-          <SelectComponent name="city" label="City" items={cities} />
           <TextFieldComponent
             name="description"
             label="Description"
