@@ -8,11 +8,11 @@ import {
   MenuItem,
   FormHelperText,
 } from '@mui/material';
-import { Lookup } from '#common/models';
+import { EpisodesLookup, LocationLookup } from '#common/models';
 import * as classes from './select.styles';
 
 type Props = SelectProps & {
-  items: Lookup[];
+  items: EpisodesLookup[] | LocationLookup[];
   helperText?: string;
 };
 

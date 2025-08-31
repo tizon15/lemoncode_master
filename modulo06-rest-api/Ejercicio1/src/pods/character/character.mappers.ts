@@ -12,6 +12,7 @@ export const mapCharacterFromApiToVm = (
   type: character.type,
   gender: character.gender,
   origin: character.origin,
+  location: character.location
 });
 
 export const mapCharacterFromVmToApi = (
@@ -26,4 +27,5 @@ export const mapCharacterFromVmToApi = (
     type: character.type,
     gender: character.gender,
     origin: character.origin,
+    location: character.location
   } as unknown as apiModel.Character);

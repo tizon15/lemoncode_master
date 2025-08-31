@@ -1,4 +1,4 @@
-import { TextFieldComponent } from '#common/components';
+import { SelectComponent, TextFieldComponent } from '#common/components';
 import {
   Avatar,
   ListItem,
@@ -14,14 +14,17 @@ import { useParams } from 'react-router-dom';
 import * as classes from './character.styles';
 import { formValidation } from './character.validations';
 import { Character } from './character.vm';
+import { EpisodesLookup, LocationLookup } from '#common/models';
 
 interface Props {
   character: Character;
+  episodes: EpisodesLookup[]
+  locations: LocationLookup[]
   onSave: (character: Character) => void;
 }
 
 export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
-  const { character, onSave } = props;
+  const { character, episodes, locations, onSave } = props;
   const { isReadOnly } = useParams();
   const disableForm = isReadOnly ? true : false;
   return (
@@ -73,18 +76,21 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
               variant={disableForm ? 'filled' : 'outlined'}
             />
 
-            <TextFieldComponent
+           {/*  <TextFieldComponent
               name="location.name"
               label="Location"
               disabled={disableForm}
               variant={disableForm ? 'filled' : 'outlined'}
-            />
+            /> */}
             <TextFieldComponent
               name="type"
               label="Type"
               disabled={disableForm}
               variant={disableForm ? 'filled' : 'outlined'}
             />
+            {!disableForm && <SelectComponent name='location.name' label="Location" items={locations} />}
+            {!disableForm && <SelectComponent  label="Episodes" items={episodes || []} />}
+
             {character.episode.length > 0 && (
               <List
                 sx={{
