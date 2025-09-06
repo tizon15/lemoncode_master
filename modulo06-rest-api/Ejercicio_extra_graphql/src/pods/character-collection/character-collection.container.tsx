@@ -16,7 +16,7 @@ export const CharacterCollectionContainer = () => {
   const debouncedLoadCharacters = React.useCallback(
     debounce((page, search) => {
       loadCharacterCollection(page, search);
-    }, 300),
+    }, 500),
     []
   );
   React.useEffect(() => {

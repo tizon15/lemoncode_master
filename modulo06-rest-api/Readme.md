@@ -8,7 +8,7 @@ Luego acceder por medio de la terminal a la carpeta que contiene los ejercicios 
 
 ## Tecnologias
 
-Para este laboratorio compuesto de 3 ejercicios dos principales y uno extra opcional. Los ejercicios están basados en el boilerplate dado en el enunciado. Se han cambiado los nombres de las componentes y usado dos tipos diferentes de APIs. La API de Rick y Morty propuesta en el enunciado. Y el server ya creado en el boilerplate para el laboratorio. El boilerplate está generado con el framework React y el server con Hono. Todo estoy usando Nodejs versión 22.11.0 y Visual Studio Code como IDE.
+Para este laboratorio compuesto de 2 ejercicios dos principales y uno extra opcional. Los ejercicios están basados en el boilerplate dado en el enunciado. Se han cambiado los nombres de las componentes y usado dos tipos diferentes de APIs. La API de Rick y Morty propuesta en el enunciado. Y el server ya creado en el boilerplate para el laboratorio. El boilerplate está generado con el framework React y el server con Hono. Todo estoy usando Nodejs versión 22.11.0 y Visual Studio Code como IDE.
 
 ---
 
@@ -28,7 +28,7 @@ Depende del ejercicio tendremos unos comandos para ejecutar por consola de maner
 
 ---
 
-## [Ejercicio 1](https://github.com/tizon15/lemoncode_master/tree/master/modulo04-frameworks/Ejercicio1)
+## [Ejercicio 1](https://github.com/tizon15/lemoncode_master/tree/master/modulo06-rest-api/Ejercicio1)
 
 Este ejercicio esta compuesto a raiz del boilerplate proporcionado. Hemos eliminado la carpeta server, dado que el objetivo principal según el enunciado es llamar a la api de [Rick y Morty](https://rickandmortyapi.com/documentation/#rest)
 
@@ -89,14 +89,12 @@ Despues ejecutaremos `npm start` para arrancar el servidor en la url local **htt
 
 Para el ejercicio extra vamos a usar la libreria [***Axios***](https://axios-http.com/docs/intro) para realizar las llamadas a la API con GraphQl.
 
-Al igual que en el ejercicio 1
-
-Al inicio se podrá visualizar la lista con los 19 primero personajes que recibimos de la API. Y con el **paginador** al final de la lista, abajo del todo, se podrán mostrar más paginas de la api. Visualizando así toda su colección
+Al igual que en el ejercicio 1 al inicio se podrá visualizar la lista con los 20 primeros personajes que recibimos de la API. Y con el **paginador** al final de la lista, abajo del todo, se podrán mostrar más paginas de la api. Visualizando así toda su colección
 
 Si se hace click sobre el icono de visualización (el ojo) podremos ver detalladamente un character en concreto. La diferencia es que al cambiar la pantalla por medio del icono de visualización podremos ver una vista detallada del personaje sin poder editarlo, solo visualizar sus caracteristicas.
 
 Si queremos volver a la lista, es decir, el home, hay un botón arriba a la izquierda que nos lleva de nuevo. O siempre se puede retroceder desde el navegador
 
-En el botón **ADD CHARACTER** podremos ir a la página de creación de un nuevo personaje, *No funciona la creación dado que estamos llamando a la api de rick y morty*. Pero podemos visualizar que hay dos desplegables **Episodes** y **Location** que los recogemos de la API de Ricky y Morty
+En este ejercicio,se ha implementado un TextField encima de la lista para poder buscar por nombre los personajes. Tiene un debounce de 5seg para que no haga tantas llamadas a la api de Rick y Morty y poder así buscar mas facilmente
 
 ---
