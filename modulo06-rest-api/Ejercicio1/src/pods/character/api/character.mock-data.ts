@@ -1,7 +1,7 @@
 import { Character } from './character.api-model';
-import { Lookup } from '#common/models';
+import {  } from '#common/models';
 // Character[]
-export const mockCharacterCollection: any = [
+/* export const mockCharacterCollection: any = [
   {
     id: '1',
     type: 'hotel',
@@ -94,3 +94,4 @@ export const mockCities: Lookup[] = [
     name: 'New York',
   },
 ];
+ */

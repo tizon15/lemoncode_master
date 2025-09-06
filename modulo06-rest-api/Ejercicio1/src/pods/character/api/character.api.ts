@@ -1,21 +1,46 @@
 import { EpisodesLookup, LocationLookup } from '#common/models';
-import axios from 'axios';
 import { Character } from './character.api-model';
 const API_URL = 'https://rickandmortyapi.com/api';
 
 export const getCharacter = async (id: string): Promise<Character> => {
-  const {data} = await axios.get(`${API_URL}/character/${id}`)
-  return data;
+  try {
+    const response = await fetch(`${API_URL}/character/${id}`);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error(error.message);
+  }
 };
 
 export const getEpisodes = async (): Promise<EpisodesLookup[]> => {
-  const {data} = await axios.get(`${API_URL}/episode`)
-  return data.results;
+  try {
+    const response = await fetch(`${API_URL}/episode`);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const { results } = await response.json();
+    return results;
+  } catch (error) {
+    console.error(error.message);
+  }
 };
 export const getLocations = async (): Promise<LocationLookup[]> => {
-  const {data} = await axios.get(`${API_URL}/location`)
-  return data.results;
-};
+try {
+    const response = await fetch(`${API_URL}/location`);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const { results } = await response.json();
+    return results;
+  } catch (error) {
+    console.error(error.message);
+  }};
 export const saveCharacter = async (character: Character): Promise<boolean> => {
   return true;
 };

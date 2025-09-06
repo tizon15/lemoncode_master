@@ -1,27 +1,19 @@
 import { graphql } from '#core/api';
-import { CharacterEntityApi } from './character-collection.api-model';
+import {
+  CharacterCollectionApi,
+  CharacterEntityVm,
+  GetCharactersCollectionResponse,
+} from './character-collection.api-model';
 import { mockCharacterCollection } from './character-collection.mock-data';
 
 let characterCollection = [...mockCharacterCollection];
 const API_URL = 'https://rickandmortyapi.com/graphql';
 
-interface InfoPagination {
-  count: number;
-  pages: number;
-  next: number;
-  prev: number;
-}
-interface GetCharactersCollectionResponse {
-  characters: {
-    info: InfoPagination;
-    results: CharacterEntityApi[];
-  };
-}
-export const getCharacterCollection = async (): Promise<
-  CharacterEntityApi[]
-> => {
-  const query = `{
-  characters {
+export const getCharacterCollection = async (
+  page: number, searchCharacter: string
+): Promise<CharacterCollectionApi> => {
+  const query = `query ($page: Int, $searchCharacter: String) {
+  characters(page: $page, filter: {name: $searchCharacter}) {
     info {
       pages
       next
@@ -40,9 +32,9 @@ export const getCharacterCollection = async (): Promise<
 }`;
   const { characters } = await graphql<GetCharactersCollectionResponse>({
     query,
+    variables: { page: page, searchCharacter: searchCharacter },
   });
-  const { results } = characters;
-  return results;
+  return characters;
 };
 
 export const deleteCharacter = async (id: number): Promise<boolean> => {

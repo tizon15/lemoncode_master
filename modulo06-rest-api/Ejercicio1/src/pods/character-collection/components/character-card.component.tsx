@@ -48,12 +48,12 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
         <IconButton onClick={() => onView(character.id, true)}>
           <VisibilityIcon />
         </IconButton>
-        <IconButton onClick={() => onEdit(character.id, false)}>
+        {/* <IconButton onClick={() => onEdit(character.id, false)}>
           <EditIcon />
         </IconButton>
         <IconButton onClick={() => onDelete(character.id)}>
           <DeleteIcon />
-        </IconButton>
+        </IconButton> */}
       </CardActions>
     </Card>
   );

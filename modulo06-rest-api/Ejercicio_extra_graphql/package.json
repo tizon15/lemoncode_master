@@ -27,6 +27,7 @@
     "@lemoncode/fonk-min-number-validator": "^1.2.0",
     "@mui/icons-material": "^7.1.1",
     "@mui/material": "^7.1.1",
+    "axios": "^1.11.0",
     "formik": "^2.4.6",
     "graphql": "^16.11.0",
     "graphql-http": "^1.22.4",

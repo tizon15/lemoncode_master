@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { CharacterCollectionApi } from '../character-collection.vm';
 import { mockCharacterCollection } from './character-collection.mock-data';
 
@@ -7,8 +6,18 @@ const API_URL = 'https://rickandmortyapi.com/api/';
 export const getCharacterCollection = async (page = 1): Promise<
   CharacterCollectionApi
 > => {
-  const { data } = await axios.get(`${API_URL}/character/?page=${page}`);
-  return data;
+  const url = `${API_URL}/character/?page=${page}`
+  try{
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error(error.message);
+  }
 };
 
 export const deleteCharacter = async (id: number): Promise<boolean> => {

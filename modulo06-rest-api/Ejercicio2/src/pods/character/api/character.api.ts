@@ -7,8 +7,6 @@ export const getCharacter = async (id: string): Promise<Character> => {
 };
 
 export const saveCharacter = async (character: Character): Promise<boolean> => {
-  console.log('Hola', character)
   const response = await axios.put(`/api/character/${character.id}`, character)
-  console.log(response)
   return true;
 };

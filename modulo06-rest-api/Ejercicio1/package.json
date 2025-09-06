@@ -4,8 +4,8 @@
   "description": "Rest API demos",
   "type": "module",
   "scripts": {
-    "start": "run-p -l type-check:watch start:dev start:server",
-    "start:dev": "vite --port 8081",
+    "start": "run-p -l type-check:watch start:dev",
+    "start:dev": "vite --port 8080",
     "start:server": "cd server && npm run mock-server",
     "prebuild": "npm run type-check",
     "build": "vite build",

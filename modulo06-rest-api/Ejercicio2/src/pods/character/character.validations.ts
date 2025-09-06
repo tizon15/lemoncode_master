@@ -5,7 +5,6 @@ const validationSchema: ValidationSchema = {
   field: {
     name: [Validators.required],
     gender: [Validators.required],
-    image: [Validators.required],
     species: [Validators.required],
     status: [Validators.required],
 

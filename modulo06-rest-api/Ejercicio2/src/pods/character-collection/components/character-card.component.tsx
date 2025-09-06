@@ -51,9 +51,9 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
         <IconButton onClick={() => onEdit(character.id, false)}>
           <EditIcon />
         </IconButton>
-        <IconButton onClick={() => onDelete(character.id)}>
+       {/*  <IconButton onClick={() => onDelete(character.id)}>
           <DeleteIcon />
-        </IconButton>
+        </IconButton> */}
       </CardActions>
     </Card>
   );

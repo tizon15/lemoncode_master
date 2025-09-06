@@ -1,11 +1,10 @@
 import { Lookup } from '#common/models';
 import { graphql } from '#core/api';
-import { CharacterEntityApi } from '#pods/character-collection/api';
+import { CharacterEntityVm } from '#pods/character-collection/api';
 import { Character } from './character.api-model';
 import { mockCities } from './character.mock-data';
-// import axios from 'axios';
 interface GetCharacterResponse {
-  character: CharacterEntityApi;
+  character: CharacterEntityVm;
 }
 export const getCharacter = async (id: string): Promise<Character> => {
   const query = `query($id:ID!){
@@ -33,7 +32,6 @@ export const getCharacter = async (id: string): Promise<Character> => {
     variables: { id },
   });
   return character;
-  return;
 };
 
 export const getCities = async (): Promise<Lookup[]> => {
