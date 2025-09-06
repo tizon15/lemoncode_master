@@ -18,3 +18,8 @@ En este modulo se encuentran los ejercicios del laboratorio referentes a prácti
 ## Modulo 04 Frameworks
 
 En este modulo se encuentran los ejercicios del laboratorio referentes a prácticas de Frameworks aprendidos en el máster [Modulo 04](https://github.com/tizon15/lemoncode_master/tree/master/modulo04-frameworks)
+
+## Modulo 06 Rest Api
+
+En este modulo se encuentran los ejercicios del laboratorio referentes a prácticas de Rest Api aprendidos en el máster [Modulo 06](https://github.com/tizon15/lemoncode_master/tree/master/modulo06-rest-api)
+
