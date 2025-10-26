@@ -9,6 +9,7 @@ Para ello se han creado dos repositorios para no crear conflicto con los laborat
 [Laboratorio Cloud Ejercicio 2](https://github.com/tizon15/lemoncode-07-cloud-lab2)
 
 Laboratorio Cloud Ejercicio Opcional (en desarrollo)
+
 ---
 
 ### Breve descripción del laboratorio 
