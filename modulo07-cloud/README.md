@@ -8,7 +8,7 @@ Para ello se han creado dos repositorios para no crear conflicto con los laborat
 
 [Laboratorio Cloud Ejercicio 2](https://github.com/tizon15/lemoncode-07-cloud-lab2)
 
-Laboratorio Cloud Ejercicio Opcional (en desarrollo)
+[Laboratorio Cloud Ejercicio Opcional](https://github.com/tizon15/lemoncode-07-cloud-extra)
 
 ---
 
@@ -32,6 +32,14 @@ https://tizon15.github.io/lemoncode-07-cloud-lab1/#/characters
 
 https://tizon15.github.io/lemoncode-07-cloud-lab2/#/characters
 
+
+
 ---
 
-Los ejercicios Opcionales actualmente estan en progreso
+[Ejericio Opcional](https://github.com/tizon15/lemoncode-07-cloud-extra)
+
+Las URLS para poder visualizar los despligues se encuentran en:
+
+https://lemoncode-07-cloud-extra.onrender.com/#/characters
+
+https://lemoncode-07-cloud-extra-011u.onrender.com/#/characters
