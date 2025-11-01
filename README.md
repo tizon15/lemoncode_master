@@ -23,3 +23,7 @@ En este modulo se encuentran los ejercicios del laboratorio referentes a prácti
 
 En este modulo se encuentran los ejercicios del laboratorio referentes a prácticas de Rest Api aprendidos en el máster [Modulo 06](https://github.com/tizon15/lemoncode_master/tree/master/modulo06-rest-api)
 
+## Modulo 07 Cloud
+
+En este modulo se encuentran los ejercicios del laboratorio referentes a prácticas de Cloud aprendidos en el máster [Modulo 07](https://github.com/tizon15/lemoncode_master/tree/master/modulo07-cloud)
+
