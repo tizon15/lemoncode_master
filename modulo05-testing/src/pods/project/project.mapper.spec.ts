@@ -2,10 +2,13 @@ import { mapProjectFromApiToVm } from './project.mapper';
 import * as apiModel from './api/project.api-model';
 import * as viewModel from './project.vm';
 
-describe('mapEmployeeSumaryFromApiToVM', () => {
-  it('should return a empty project it feeds undefined', () => {
+describe('mapEmployeeSumaryFromApiToVM specs', () => {
+  it.each<apiModel.Project[]>([
+    [undefined],
+    [null],
+    [],
+  ])('should return array one mapped item when it feed array with one item', (project) => {
     //Arrange
-    const project: apiModel.Project = undefined;
 
     // Act
     const result = mapProjectFromApiToVm(project);
@@ -14,17 +17,22 @@ describe('mapEmployeeSumaryFromApiToVM', () => {
     const expectedResult: viewModel.Project = viewModel.createEmptyProject();
     expect(result).toEqual(expectedResult);
   });
-  it('should return a empty project it feeds null', () => {
+  it.each<apiModel.Project[]>([
+    [undefined],
+    [null],
+    [],
+  ])('should return empty array when it feeds projects equals $project', (project) => {
     //Arrange
-    const project: apiModel.Project = null;
+    // const project: apiModel.Project = null;
 
     // Act
     const result = mapProjectFromApiToVm(project);
 
     // Assert
-    const expectedResult: viewModel.Project = viewModel.createEmptyProject();
+    const expectedResult: viewModel.Project[] = []
     expect(result).toEqual(expectedResult);
   });
+  
   it('should return a empty project it feeds empty object', () => {
     //Arrange
     const mockEmployees: apiModel.EmployeeSummary[] = [
