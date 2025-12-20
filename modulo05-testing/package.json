@@ -5,13 +5,16 @@
   "type": "module",
   "scripts": {
     "start": "run-p -l type-check:watch start:dev",
-    "start:dev": "vite --open",
+    "start:dev": "vite --port 8080",
     "build": "run-p -l type-check build:prod",
     "build:prod": "npm run clean && vite build",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
     "test": "vitest -c ./config/test/config.ts",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "start:e2e": "cypress open",
+    "test:e2e:ci": "npm start -- -r start:e2e:ci",
+    "start:e2e:ci": "cypress run"
   },
   "imports": {
     "#*": "./src/*"
@@ -50,6 +53,7 @@
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^4.4.1",
+    "cypress": "^15.8.1",
     "jsdom": "^26.1.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^6.0.1",
