@@ -30,7 +30,7 @@ Depende del ejercicio tendremos unos comandos para ejecutar por consola de maner
 
 ---
 
-## [Ejercicio 1 - Obligatorio](https://github.com/tizon15/lemoncode_master/tree/master/modulo05-testing) -> Branch feature/laboratorio-testing-obligatorio
+## [Ejercicio 1 - Obligatorio](https://github.com/tizon15/lemoncode_master/tree/feature/laboratorio-testing-obligatorio/modulo05-testing) -> Branch feature/laboratorio-testing-obligatorio
 
 Para este ejercicio se ha usado el booilerplate [05-testing/01-react/05-real-project/00-boilerplate](https://github.com/Lemoncode/master-frontend-lemoncode/tree/master/05-testing/01-react/05-real-project/00-boilerplate) proyecto proporcionado en el enunciado como referencia. Se ha añadido la libreria de user event `@testing-library/user-event`, en este caso al estar ya en nuestro **package.json** solo tendremos que hacer `npm install` para instalar las dependencias del proyecto
 
@@ -44,7 +44,7 @@ Los cambios de estos ficheros se pueden visualizar en la [pull request](https://
 
 ---
 
-## [Ejercicio 2 - Opcional](https://github.com/tizon15/lemoncode_master/tree/master/modulo05-testing) -> Branch feature/laboratorio-testing-opcional
+## [Ejercicio 2 - Opcional](https://github.com/tizon15/lemoncode_master/tree/feature/laboratorio-testing-opcional/modulo05-testing) -> Branch feature/laboratorio-testing-opcional
 
 Para este ejercicio se ha creado una rama a partir de la rama obligatorio `Branch feature/laboratorio-testing-obligatorio`. Se han seguido los pasos del enunciado para crear los diferentes tipos de test
 
