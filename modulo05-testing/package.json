@@ -13,7 +13,7 @@
     "test": "vitest -c ./config/test/config.ts",
     "clean": "rimraf dist",
     "start:e2e": "cypress open",
-    "test:e2e:ci": "npm start -- -r start:e2e:ci",
+    "test:e2e:ci": "npm start -- -r start:e2e",
     "start:e2e:ci": "cypress run"
   },
   "imports": {
@@ -46,6 +46,7 @@
     "react-spinners": "^0.17.0"
   },
   "devDependencies": {
+    "@testing-library/cypress": "^10.1.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
