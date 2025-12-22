@@ -6,6 +6,7 @@ test('should fetch the employees list first page with headers', async ({
   //Arrange
   //Act
   await page.goto('#/employees');
+  await page.waitForSelector('table');
   await page.waitForLoadState('networkidle');
   //Assert
 
@@ -16,6 +17,7 @@ test('should fetch the employees list second page', async ({ page }) => {
   //Arrange
   //Act
   await page.goto('#/employees');
+  await page.waitForSelector('table');
   await page.click('button[aria-label="Go to next page"]');
   await page.waitForLoadState('networkidle');
   //Assert
@@ -26,6 +28,7 @@ test('should search employeess by the input', async ({ page }) => {
   //Arrange
   //Act
   await page.goto('#/employees');
+  await page.waitForSelector('table');
   await page.waitForLoadState('networkidle');
   await page.fill('input[placeholder="Buscar empleado"]', 'Manuel');
   await page.waitForLoadState('networkidle');
