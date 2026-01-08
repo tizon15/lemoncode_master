@@ -34,8 +34,7 @@ describe('Confirm dialog component specs', () => {
     };
 
     //Act
-    const { asFragment } = render(<ConfirmationDialogComponent {...props} />);
-    expect(asFragment).toMatchSnapshot();
+    render(<ConfirmationDialogComponent {...props} />);
     const dialogElement = screen.queryByRole('dialog');
     expect(dialogElement).toBeInTheDocument();
   });
