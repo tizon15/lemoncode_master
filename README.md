@@ -37,8 +37,6 @@ En este modulo se encuentran los ejercicios del laboratorio referentes a prácti
 
 En este modulo se encuentran los ejercicios del laboratorio referentes a prácticas de Metaframeworks aprendidos en el máster
 
-<!-- TODO URLS -->
+[Modulo 05-Metaframeworks-NextJS](https://github.com/tizon15/modulo05-metaframework-NextJS)
 
-[Modulo 05-Metaframeworks-NextJS](https://github.com/tizon15/lemoncode_master/tree/master/modulo07-cloud)
-
-[Modulo 05-Metaframeworks-TanStack](https://github.com/tizon15/lemoncode_master/tree/master/modulo07-cloud)
+[Modulo 05-Metaframeworks-TanStack](https://github.com/tizon15/modulo05-metaframework-TanStack)
